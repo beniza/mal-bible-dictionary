@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ബൈബിൾ പക്ഷി നിഘണ്ടു | ലേവ്യപുസ്തകം 11 | ആവർത്തനം 14</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@300;400;600;700&family=Noto+Serif+Malayalam:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --paper: #fdfcf0;
+            --ink: #2c241e;
+            --accent: #8b735b;
+            --highlight: #c19a6b;
+        }
+
+        body {
+            background-color: var(--paper);
+            color: var(--ink);
+            font-family: 'Noto Sans Malayalam', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, .serif {
+            font-family: 'Noto Serif Malayalam', serif;
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-h: 350px;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(139, 115, 91, 0.2);
+        }
+
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        .category-btn.active {
+            background-color: var(--accent);
+            color: white;
+        }
+
+        .bird-card {
+            transition: all 0.3s ease;
+        }
+
+        .bird-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+
+    <nav class="sticky top-0 z-50 bg-[#fdfcf0]/90 backdrop-blur-md border-b border-stone-200 px-4 py-3">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <span class="serif text-xl font-bold tracking-tight">ബൈബിൾ പക്ഷി നിഘണ്ടു</span>
+            <div class="flex space-x-4 text-sm font-semibold">
+                <a href="#verses" class="hover:text-[#c19a6b]">വേദഭാഗങ്ങൾ</a>
+                <a href="#dashboard" class="hover:text-[#c19a6b]">അടിസ്ഥാനം</a>
+                <a href="#explorer" class="hover:text-[#c19a6b]">പക്ഷികൾ</a>
+                <a href="#pitfalls" class="hover:text-[#c19a6b]">വിവർത്തനം</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative py-16 px-6 text-center bg-[#2c241e] text-[#fdfcf0]">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-3xl md:text-5xl font-bold mb-6 serif leading-tight">ലേവ്യപുസ്തകത്തിലും ആവർത്തനപുസ്തകത്തിലും പ്രതിപാദിച്ചിരിക്കുന്ന അശുദ്ധ പക്ഷികൾ</h1>
+            <p class="text-base md:text-lg text-stone-400 font-light max-w-2xl mx-auto leading-relaxed">
+                മോശയുടെ ന്യായപ്രമാണത്തിൽ ഭക്ഷിക്കാൻ പാടില്ലാത്തതായി പറഞ്ഞിരിക്കുന്ന പക്ഷികളെക്കുറിച്ചും, അവയുടെ യഥാർത്ഥ എബ്രായ അർത്ഥങ്ങളെക്കുറിച്ചും, വിവർത്തനത്തിൽ വന്ന മാറ്റങ്ങളെക്കുറിച്ചും ഉള്ള പഠനം.
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-12">
+        
+        <section id="verses" class="mb-20">
+            <div class="mb-10 text-center">
+                <h2 class="text-3xl font-bold serif mb-4">ലേവ്യപുസ്തകം 11:13-19 | ആവർത്തനപുസ്തകം 14:12-18</h2>
+                <p class="text-stone-600 max-w-3xl mx-auto">
+                    വിവിധ മലയാളം, ഇംഗ്ലീഷ് ബൈബിൾ പരിഭാഷകളിൽ ഈ ഭാഗം നൽകിയിരിക്കുന്നു.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- BSI OV -->
+                <div class="glass-card p-6 rounded-2xl border border-stone-200 shadow-sm">
+                    <div class="flex items-center justify-between mb-4 border-b border-stone-100 pb-2">
+                        <h3 class="font-bold text-lg text-[#8b735b]">BSI OV (സത്യവേദപുസ്തകം)</h3>
+                        <span class="text-[10px] uppercase font-bold text-stone-400 bg-stone-100 px-2 py-1 rounded">Malayalam</span>
+                    </div>
+                    <p class="text-sm text-stone-700 leading-relaxed serif">
+                        <b class="text-[#c19a6b]">12</b> പക്ഷികളിൽ തിന്നരുതാത്തവ: കടൽറാഞ്ചൻ, ചെമ്പരുന്തു, കഴുകൻ, <b class="text-[#c19a6b]">13</b> ചെങ്ങാലിപ്പരുന്തു, ഗൃദ്ധ്രം, അതതുവിധം പരുന്തു <b class="text-[#c19a6b]">14</b> അതതുവിധം കാക്ക, <b class="text-[#c19a6b]">15</b> ഒട്ടകപക്ഷി, പുള്ളു, കടൽക്കാക്ക, അതതുവിധം പ്രാപ്പിടിയൻ, <b class="text-[#c19a6b]">16</b> നത്തു, കൂമൻ, മൂങ്ങാ, വേഴാമ്പൽ, <b class="text-[#c19a6b]">17</b> കുടുമ്മച്ചാത്തൻ, നീർകാക്ക, <b class="text-[#c19a6b]">18</b> പെരുഞാറ, അതതുവിധം കൊക്കു, കുളക്കോഴി, നരിച്ചീർ എന്നിവയാകുന്നു.
+                    </p>
+                </div>
+
+                <!-- BSI CL -->
+                <div class="glass-card p-6 rounded-2xl border border-stone-200 shadow-sm">
+                    <div class="flex items-center justify-between mb-4 border-b border-stone-100 pb-2">
+                        <h3 class="font-bold text-lg text-[#8b735b]">BSI CL (തിരുവചനം)</h3>
+                        <span class="text-[10px] uppercase font-bold text-stone-400 bg-stone-100 px-2 py-1 rounded">Malayalam</span>
+                    </div>
+                    <p class="text-sm text-stone-700 leading-relaxed serif">
+                        <b class="text-[#c19a6b]">12</b> നിങ്ങൾക്കു ഭക്ഷ്യമല്ലാത്ത പക്ഷികൾ ഇവയാണ്: കടൽറാഞ്ചി, ചെമ്പരുന്ത്, <b class="text-[#c19a6b]">13</b> കഴുകൻ, ചെങ്ങാലിപ്പരുന്ത്, ഗൃദ്ധ്രം, <b class="text-[#c19a6b]">14</b> മറ്റു പരുന്തുവർഗങ്ങൾ, കാക്കയുടെ വർഗങ്ങളെല്ലാം, <b class="text-[#c19a6b]">15</b> ഒട്ടകപ്പക്ഷി, പുള്ള്, കടൽക്കാക്ക, പ്രാപ്പിടിയൻവർഗങ്ങൾ, <b class="text-[#c19a6b]">16</b> നത്ത്, കൂമൻ, മൂങ്ങ, വേഴാമ്പൽ, <b class="text-[#c19a6b]">17</b> കുടുമ്മച്ചാത്തൻ, നീർക്കാക്ക, പെരുംഞാറ, <b class="text-[#c19a6b]">18</b> കൊക്കുവർഗങ്ങൾ, കുളക്കോഴി, നരിച്ചീർ. <b class="text-[#c19a6b]">19</b> ചിറകുള്ള പ്രാണികൾ നിങ്ങൾക്ക് അശുദ്ധമാകുന്നു; <b class="text-[#c19a6b]">20</b> അവയെ ഭക്ഷിക്കരുത്; ശുദ്ധിയുള്ള പക്ഷികളെയെല്ലാം നിങ്ങൾക്കു ഭക്ഷിക്കാം.
+                    </p>
+                </div>
+
+                <!-- MCV -->
+                <div class="glass-card p-6 rounded-2xl border border-stone-200 shadow-sm">
+                    <div class="flex items-center justify-between mb-4 border-b border-stone-100 pb-2">
+                        <h3 class="font-bold text-lg text-[#8b735b]">MCV (സമകാലിക മലയാളം)</h3>
+                        <span class="text-[10px] uppercase font-bold text-stone-400 bg-stone-100 px-2 py-1 rounded">Malayalam</span>
+                    </div>
+                    <p class="text-sm text-stone-700 leading-relaxed serif">
+                        <b class="text-[#c19a6b]">12</b> എന്നാൽ നിങ്ങൾക്കു ഭക്ഷിക്കാൻ പാടില്ലാത്തവ ഇവയാകുന്നു: കഴുകൻ, ചെമ്പരുന്ത്, കരിമ്പരുന്ത്, <b class="text-[#c19a6b]">13</b> ഗൃദ്ധ്രം, പരുന്ത്, എല്ലാ ഇനത്തിലുംപെട്ട ഇരപിടിയൻപക്ഷി, <b class="text-[#c19a6b]">14</b> എല്ലാ ഇനത്തിലുംപെട്ട കാക്ക, <b class="text-[#c19a6b]">15</b> ഒട്ടകപ്പക്ഷി, പുള്ള്, കടൽക്കാക്ക, എല്ലാ ഇനത്തിലുംപെട്ട കഴുകൻ, <b class="text-[#c19a6b]">16</b> നത്ത്, നീർക്കാക്ക, കൂമൻ, <b class="text-[#c19a6b]">17</b> മൂങ്ങ, വേഴാമ്പൽ, വെള്ളക്കഴുകൻ, <b class="text-[#c19a6b]">18</b> പെരിഞ്ഞാറ, ഏതിനത്തിലുംപെട്ട കൊക്ക്, കുളക്കോഴി, വവ്വാൽ. 
+                    </p>
+                </div>
+
+                <!-- POC -->
+                <div class="glass-card p-6 rounded-2xl border border-stone-200 shadow-sm">
+                    <div class="flex items-center justify-between mb-4 border-b border-stone-100 pb-2">
+                        <h3 class="font-bold text-lg text-[#8b735b]">POC (കത്തോലിക്ക ബൈബിൾ)</h3>
+                        <span class="text-[10px] uppercase font-bold text-stone-400 bg-stone-100 px-2 py-1 rounded">Malayalam</span>
+                    </div>
+                    <p class="text-sm text-stone-700 leading-relaxed serif">
+                        <b class="text-[#c19a6b]">12</b> നിങ്ങൾ ഭക്ഷിക്കരുതാത്ത പക്ഷികൾ ഇവയാണ്: <b class="text-[#c19a6b]">13</b> എല്ലാ തരത്തിലുംപെട്ട കഴുകൻ, ചെമ്പരുന്ത്, <b class="text-[#c19a6b]">14</b> കരിമ്പരുന്ത്, ഗൃദ്ധ്രം, പ്രാപ്പിടിയൻ, പരുന്ത്, കാക്ക, <b class="text-[#c19a6b]">15</b> ഒട്ടകപ്പക്ഷി, രാനത്ത്, കടൽപ്പാത്ത, ചെങ്ങാലിപ്പരുന്ത്, <b class="text-[#c19a6b]">16</b> മൂങ്ങ, കൂമൻ, അരയന്നം, <b class="text-[#c19a6b]">17</b> ഞാറപ്പക്ഷി, കരിങ്കഴുകൻ, നീർക്കാക്ക, <b class="text-[#c19a6b]">18</b> കൊക്ക്, എരണ്ട, കാട്ടുകോഴി, നരിച്ചീർ. 
+                    </p>
+                </div>
+
+                <!-- KJV -->
+                <div class="glass-card p-6 rounded-2xl border border-stone-200 shadow-sm">
+                    <div class="flex items-center justify-between mb-4 border-b border-stone-100 pb-2">
+                        <h3 class="font-bold text-lg text-[#8b735b]">KJV</h3>
+                        <span class="text-[10px] uppercase font-bold text-stone-400 bg-stone-100 px-2 py-1 rounded">English</span>
+                    </div>
+                    <p class="text-sm text-stone-700 leading-relaxed font-serif">
+                        <b class="text-[#c19a6b]">12</b> But these are they of which ye shall not eat: the eagle, and the ossifrage, and the ospray, <b class="text-[#c19a6b]">13</b> and the glede, and the kite, and the vulture after his kind, <b class="text-[#c19a6b]">14</b> and every raven after his kind, <b class="text-[#c19a6b]">15</b> and the owl, and the night hawk, and the cuckow, and the hawk after his kind, <b class="text-[#c19a6b]">16</b> the little owl, and the great owl, and the swan, <b class="text-[#c19a6b]">17</b> and the pelican, and the gier eagle, and the cormorant, <b class="text-[#c19a6b]">18</b> and the stork, and the heron after her kind, and the lapwing, and the bat.
+                    </p>
+                </div>
+
+                <!-- NIV -->
+                <div class="glass-card p-6 rounded-2xl border border-stone-200 shadow-sm">
+                    <div class="flex items-center justify-between mb-4 border-b border-stone-100 pb-2">
+                        <h3 class="font-bold text-lg text-[#8b735b]">NIV</h3>
+                        <span class="text-[10px] uppercase font-bold text-stone-400 bg-stone-100 px-2 py-1 rounded">English</span>
+                    </div>
+                    <p class="text-sm text-stone-700 leading-relaxed font-serif">
+                        <b class="text-[#c19a6b]">12</b> But these you may not eat: the eagle, the vulture, the black vulture, <b class="text-[#c19a6b]">13</b> the red kite, the black kite, any kind of falcon, <b class="text-[#c19a6b]">14</b> any kind of raven, <b class="text-[#c19a6b]">15</b> the horned owl, the screech owl, the gull, any kind of hawk, <b class="text-[#c19a6b]">16</b> the little owl, the great owl, the white owl, <b class="text-[#c19a6b]">17</b> the desert owl, the osprey, the cormorant, <b class="text-[#c19a6b]">18</b> the stork, any kind of heron, the hoopoe and the bat.
+                    </p>
+                </div>
+
+                <!-- YLT -->
+                <div class="glass-card p-6 rounded-2xl border border-stone-200 shadow-sm">
+                    <div class="flex items-center justify-between mb-4 border-b border-stone-100 pb-2">
+                        <h3 class="font-bold text-lg text-[#8b735b]">YLT</h3>
+                        <span class="text-[10px] uppercase font-bold text-stone-400 bg-stone-100 px-2 py-1 rounded">English</span>
+                    </div>
+                    <p class="text-sm text-stone-700 leading-relaxed font-serif">
+                        <b class="text-[#c19a6b]">12</b> and these [are] they of which ye do not eat: the eagle, and the ossifrage, and the ospray, <b class="text-[#c19a6b]">13</b> and the glede, and the kite, and the vulture after its kind, <b class="text-[#c19a6b]">14</b> and every raven after its kind; <b class="text-[#c19a6b]">15</b> and the owl, and the night-hawk, and the cuckoo, and the hawk after its kind; <b class="text-[#c19a6b]">16</b> the [little] owl, and the [great] owl, and the swan, <b class="text-[#c19a6b]">17</b> and the pelican, and the gier-eagle, and the cormorant, <b class="text-[#c19a6b]">18</b> and the stork, and the heron after its kind, and the lapwing, and the bat; 
+                    </p>
+                </div>
+
+                <!-- NKJV -->
+                <div class="glass-card p-6 rounded-2xl border border-stone-200 shadow-sm">
+                    <div class="flex items-center justify-between mb-4 border-b border-stone-100 pb-2">
+                        <h3 class="font-bold text-lg text-[#8b735b]">NKJV</h3>
+                        <span class="text-[10px] uppercase font-bold text-stone-400 bg-stone-100 px-2 py-1 rounded">English</span>
+                    </div>
+                    <p class="text-sm text-stone-700 leading-relaxed font-serif">
+                        <b class="text-[#c19a6b]">12</b> “But these you shall not eat: the eagle, the vulture, the buzzard, <b class="text-[#c19a6b]">13</b> “the red kite, the falcon, and the kite after their kinds; <b class="text-[#c19a6b]">14</b> “every raven after its kind; <b class="text-[#c19a6b]">15</b> “the ostrich, the short-eared owl, the sea gull, and the hawk after their kinds; <b class="text-[#c19a6b]">16</b> “the little owl, the screech owl, the white owl, <b class="text-[#c19a6b]">17</b> “the jackdaw, the carrion vulture, the fisher owl, <b class="text-[#c19a6b]">18</b> “the stork, the heron after its kind, and the hoopoe and the bat.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="dashboard" class="mb-20">
+            <div class="mb-10 text-center">
+                <h2 class="text-3xl font-bold serif mb-4">അശുദ്ധിയുടെ അടിസ്ഥാനം</h2>
+                <p class="text-stone-600 max-w-3xl mx-auto">
+                    പുരാതന എബ്രായർ ജീവികളെ വർഗ്ഗീകരിച്ചിരുന്നത് ഇന്നത്തെപ്പോലെ ശാസ്ത്രീയമായല്ല, മറിച്ച് അവയുടെ സ്വഭാവം, ആഹാരരീതി എന്നിവയുടെ അടിസ്ഥാനത്തിലായിരുന്നു. ലേവ്യപുസ്തകം 11-ലെ പക്ഷികളെ അവയുടെ ആവാസവ്യവസ്ഥയുടെ അടിസ്ഥാനത്തിൽ താഴെ തരംതിരിച്ചിരിക്കുന്നു.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center bg-white p-8 rounded-2xl shadow-sm border border-stone-100">
+                <div class="chart-container">
+                    <canvas id="categoryChart"></canvas>
+                </div>
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold serif">വർഗ്ഗീകരണ തത്വങ്ങൾ</h3>
+                    <div class="flex gap-4">
+                        <div class="w-2 h-auto bg-amber-200 rounded-full"></div>
+                        <div>
+                            <span class="font-bold block text-lg">ആഹാരരീതി (Diet)</span>
+                            <p class="text-sm text-stone-600">രക്തം, മാംസം, ശവം എന്നിവ ഭക്ഷിക്കുന്നവ. ഇരപിടിയന്മാരായ പക്ഷികളും ശവംതീനികളുമായ കഴുകന്മാരും ഈ ഗണത്തിൽ വരുന്നു.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-2 h-auto bg-slate-200 rounded-full"></div>
+                        <div>
+                            <span class="font-bold block text-lg">ആവാസവ്യവസ്ഥ (Habitat)</span>
+                            <p class="text-sm text-stone-600">പാഴായിക്കിടക്കുന്ന ശൂന്യപ്രദേശങ്ങളിലും, ഇരുട്ടിലും വസിക്കുന്ന പക്ഷികൾ. ഇവ മരണം, ശൂന്യത എന്നിവയെ പ്രതിനിധീകരിക്കുന്നു.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-2 h-auto bg-stone-200 rounded-full"></div>
+                        <div>
+                            <span class="font-bold block text-lg">സഞ്ചാരരീതി (Locomotion)</span>
+                            <p class="text-sm text-stone-600">ചിറകുള്ള പ്രാണികളെയും ഇരുട്ടിൽ പറക്കുന്ന വവ്വാലിനെയും പറക്കുന്ന രീതിയുടെ അടിസ്ഥാനത്തിൽ പക്ഷികളോടൊപ്പം ഉൾപ്പെടുത്തിയിരിക്കുന്നു.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="explorer" class="mb-20">
+            <div class="mb-10">
+                <h2 class="text-3xl font-bold serif mb-4">പക്ഷികളുടെ പട്ടിക</h2>
+                <p class="text-stone-600">
+                    താഴെ കൊടുത്തിരിക്കുന്ന വിവിധ വിഭാഗങ്ങളിൽ ക്ലിക്ക് ചെയ്ത് ഓരോ പക്ഷികളെക്കുറിച്ചും വിശദമായി മനസ്സിലാക്കുക. എബ്രായ പദവും, മലയാള ബൈബിൾ തർജ്ജമകളും, ശാസ്ത്രീയമായ കണ്ടെത്തലുകളും ഇവിടെ താരതമ്യം ചെയ്യാം.
+                </p>
+            </div>
+
+            <div class="flex flex-wrap gap-2 mb-8" id="categoryFilters">
+                <button onclick="filterBirds('all')" class="category-btn active px-4 py-2 rounded-full text-sm font-semibold border border-stone-200 transition-all">എല്ലാ പക്ഷികളും</button>
+                <button onclick="filterBirds('ശവംതീനികൾ')" class="category-btn px-4 py-2 rounded-full text-sm font-semibold border border-stone-200 transition-all">ശവംതീനികൾ</button>
+                <button onclick="filterBirds('രാത്രിഞ്ചരന്മാർ')" class="category-btn px-4 py-2 rounded-full text-sm font-semibold border border-stone-200 transition-all">രാത്രിഞ്ചരന്മാർ</button>
+                <button onclick="filterBirds('നീർപ്പക്ഷികൾ')" class="category-btn px-4 py-2 rounded-full text-sm font-semibold border border-stone-200 transition-all">നീർപ്പക്ഷികൾ</button>
+                <button onclick="filterBirds('മറ്റു പറവകൾ')" class="category-btn px-4 py-2 rounded-full text-sm font-semibold border border-stone-200 transition-all">മറ്റു പറവകൾ</button>
+            </div>
+
+            <div id="birdGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Dynamic Content goes here -->
+            </div>
+        </section>
+
+        <section id="pitfalls" class="mb-20">
+            <div class="bg-[#2c241e] text-[#fdfcf0] p-8 md:p-12 rounded-3xl overflow-hidden relative">
+                <div class="absolute -right-20 -top-20 w-64 h-64 bg-[#8b735b] opacity-20 rounded-full blur-3xl"></div>
+                
+                <h2 class="text-3xl font-bold serif mb-8">വിവർത്തനത്തിലെ പ്രധാന വെല്ലുവിളികൾ</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white/5 p-6 rounded-xl border border-white/10">
+                        <h4 class="font-bold text-lg mb-3 flex items-center">
+                            <span class="mr-2 text-amber-500">❖</span> ഭൂരൂപപരമായ വ്യത്യാസങ്ങൾ (Geographical Differences)
+                        </h4>
+                        <p class="text-stone-400 text-sm leading-relaxed">
+                            ഇസ്രായേലിലും പരിസരങ്ങളിലും കാണപ്പെടുന്ന പല പക്ഷികളും കേരളത്തിൽ ഇല്ലാത്തതിനാൽ, തത്തുല്യമായ പക്ഷികളുടെ പേരുകൾ മലയാളത്തിൽ ഉപയോഗിക്കാൻ വിവർത്തകർ നിർബന്ധിതരായി. ഉദാഹരണത്തിന്, ഒട്ടകപ്പക്ഷി (Ostrich) എന്ന് പലയിടത്തും തർജ്ജമ ചെയ്തിരിക്കുന്നത് യഥാർത്ഥത്തിൽ മരുഭൂമിയിൽ വസിക്കുന്ന ഒരു വലിയ മൂങ്ങയെയാണ്.
+                        </p>
+                    </div>
+                    <div class="bg-white/5 p-6 rounded-xl border border-white/10">
+                        <h4 class="font-bold text-lg mb-3 flex items-center">
+                            <span class="mr-2 text-amber-500">❖</span> സാംസ്കാരിക പദപ്രയോഗങ്ങൾ (Cultural Equivalency)
+                        </h4>
+                        <p class="text-stone-400 text-sm leading-relaxed">
+                            ചാണകം ചിക്കി ഇരതേടുന്ന 'ഹൂപ്പൂ' (Hoopoe) എന്ന പക്ഷിയെ മലയാളത്തിൽ 'കുളക്കോഴി' (Waterhen) എന്നാണ് തർജ്ജമ ചെയ്തിരിക്കുന്നത്. ഇത് മൂലഭാഷയിലെ അശുദ്ധിയുടെ യഥാർത്ഥ കാരണത്തെ വായനക്കാരിൽ നിന്നും മറച്ചുവെക്കുന്നു.
+                        </p>
+                    </div>
+                    <div class="bg-white/5 p-6 rounded-xl border border-white/10">
+                        <h4 class="font-bold text-lg mb-3 flex items-center">
+                            <span class="mr-2 text-amber-500">❖</span> ജീവശാസ്ത്രം വേഴ്സസ് സ്വഭാവം (Biology vs Behavior)
+                        </h4>
+                        <p class="text-stone-400 text-sm leading-relaxed">
+                            വവ്വാലിനെ (Bat) പക്ഷികളുടെ കൂട്ടത്തിൽ ഉൾപ്പെടുത്തിയിരിക്കുന്നത് ആധുനിക വായനക്കാരിൽ സംശയം ഉണ്ടാക്കാറുണ്ട്. എന്നാൽ പുരാതന എബ്രായർ ജീവികളെ അവയുടെ ശാസ്ത്രീയ വർഗ്ഗീകരണത്തിനപ്പുറം അവ പറക്കുന്നവയാണോ എന്നതിൻ്റെ അടിസ്ഥാനത്തിലാണ് തരംതിരിച്ചത്.
+                        </p>
+                    </div>
+                    <div class="bg-white/5 p-6 rounded-xl border border-white/10">
+                        <h4 class="font-bold text-lg mb-3 flex items-center">
+                            <span class="mr-2 text-amber-500">❖</span> വേരുവക്കുകളിലെ രഹസ്യങ്ങൾ (Root Word Mysteries)
+                        </h4>
+                        <p class="text-stone-400 text-sm leading-relaxed">
+                            പല എബ്രായ പദങ്ങളും പക്ഷിയുടെ സ്വഭാവത്തെ സൂചിപ്പിക്കുന്നു. ഉദാഹരണത്തിന്, 'പെരെസ്' (Peres) എന്ന പദത്തിന്റെ അർത്ഥം 'എല്ലൊടിക്കുന്നവൻ' എന്നാണ്; ഇത് എല്ല് പൊട്ടിച്ച് മജ്ജ കുടിക്കുന്ന ബിയർഡഡ് വൾച്ചറിനെ (Bearded Vulture) കൃത്യമായി സൂചിപ്പിക്കുന്നു.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-stone-100 border-t border-stone-200 py-12 px-4 text-center">
+        <p class="text-stone-500 text-sm italic mb-4">"അവ നിങ്ങൾക്ക് അശുദ്ധമായിരിക്കേണം; അവയെ തിന്നരുത്..." — ലേവ്യപുസ്തകം 11:13</p>
+        <p class="text-stone-400 text-xs">ബൈബിളിലെ ജീവശാസ്ത്ര പഠനങ്ങളുടെയും സ്ട്രോങ്സ് കൺകോർഡൻസിന്റെയും അടിസ്ഥാനത്തിൽ തയ്യാറാക്കിയത്.</p>
+    </footer>
+
+    <script>
+        const birdData = [
+            { id: "H5404", heb: "നെഷെർ (Nesher)", eng: "Eagle / Vulture", ident: "യൂറേഷ്യൻ ഗ്രിഫൺ കഴുകൻ (Griffon Vulture)", mal: "കഴുകൻ / കടൽറാഞ്ചൻ", cat: "ശവംതീനികൾ", note: "വേരുവാക്കിൻ്റെ അർത്ഥം 'കീറിക്കളയുക' എന്നാണ്. തലമുടിയില്ലാത്ത ശവംതീനിയായ കഴുകനെയാണ് ഇത് സൂചിപ്പിക്കുന്നത് (മീഖാ 1:16)." },
+            { id: "H6538", heb: "പെരെസ് (Peres)", eng: "Ossifrage / Buzzard", ident: "ബിയർഡഡ് കഴുകൻ (Bearded Vulture)", mal: "ചെമ്പരുന്ത് / ഗൃദ്ധ്രം", cat: "ശവംതീനികൾ", note: "അർത്ഥം 'എല്ലൊടിക്കുന്നവൻ'. ഇവ മുകളിൽ നിന്നും എല്ലുകൾ പാറയിലിട്ട് പൊട്ടിച്ച് അതിലെ മജ്ജ ഭക്ഷിക്കുന്നു." },
+            { id: "H5822", heb: "ഒസ്നിയ (Ozniyah)", eng: "Osprey / Black Vulture", ident: "ലാപ്പറ്റ്-ഫേസ്ഡ് കഴുകൻ", mal: "കരിമ്പരുന്ത്", cat: "ശവംതീനികൾ", note: "മിഡിൽ ഈസ്റ്റിൽ കാണപ്പെടുന്ന ഏറ്റവും വലുതും കരുത്തുറ്റതുമായ ശവംതീനി പക്ഷി." },
+            { id: "H1676", heb: "ദാഹ് (Da'ah)", eng: "Kite", ident: "ചെമ്പരുന്ത് വർഗ്ഗങ്ങൾ (Black/Red Kite)", mal: "ചെങ്ങാലിപ്പരുന്ത് / അതതുവിധം പരുന്തു", cat: "ശവംതീനികൾ", note: "അർത്ഥം 'വേഗത്തിൽ പറക്കുന്നവ'. വേഗത്തിൽ പറന്ന് ഇരപിടിക്കുന്ന പരുന്തുകൾ." },
+            { id: "H3284", heb: "ബത്ത് യനാഹ് (Bat Ya'anah)", eng: "Ostrich", ident: "വലിയ മൂങ്ങ (Eagle Owl)", mal: "ഒട്ടകപ്പക്ഷി", cat: "രാത്രിഞ്ചരന്മാർ", note: "പാഴായിക്കിടക്കുന്ന പ്രദേശങ്ങളിലെ വലിയ രാത്രിപ്പക്ഷിയെയാണ് ഇത് സൂചിപ്പിക്കുന്നത്. ഒട്ടകപ്പക്ഷി സസ്യഭുക്കായതിനാൽ അശുദ്ധമാകാൻ സാധ്യതയില്ല." },
+            { id: "H8464", heb: "തഹ്മാസ് (Tachmas)", eng: "Night hawk", ident: "രാത്രിയിലെ വേട്ടക്കാർ (Short-eared Owl / Nightjar)", mal: "പുള്ള് / രാനത്ത്", cat: "രാത്രിഞ്ചരന്മാർ", note: "രാത്രികാലങ്ങളിൽ ഇരതേടുന്ന, പ്രത്യേക ശബ്ദമുണ്ടാക്കുന്ന പക്ഷികൾ." },
+            { id: "H3563", heb: "കോസ് (Kos)", eng: "Little Owl", ident: "ചെറിയ മൂങ്ങ (Little Owl)", mal: "നത്ത്", cat: "രാത്രിഞ്ചരന്മാർ", note: "'കോപ്പ' എന്നാണ് ഈ വാക്കിന്റെ അർത്ഥം. മൂങ്ങയുടെ കണ്ണുകളുടെ കുഴികളെയാകാം ഇത് സൂചിപ്പിക്കുന്നത്." },
+            { id: "H8580", heb: "തിൻഷെമെത് (Tinshemeth)", eng: "Swan", ident: "വെള്ളമൂങ്ങ (Barn Owl)", mal: "അരയന്നം / മൂങ്ങ", cat: "രാത്രിഞ്ചരന്മാർ", note: "അരയന്നം ഇസ്രായേലിൽ സാധാരണമല്ല. ഈ വാക്കിനർത്ഥം 'ചീറ്റുക' എന്നാണ്; ഇത് വെള്ളമൂങ്ങയുടെ ശബ്ദത്തിന് സമാനമാണ്." },
+            { id: "H7828", heb: "ഷഹഫ് (Shachaph)", eng: "Sea gull", ident: "കടൽക്കാക്കകൾ (Gulls and Terns)", mal: "കടൽക്കാക്ക / കടൽപ്പാത്ത", cat: "നീർപ്പക്ഷികൾ", note: "തീരപ്രദേശങ്ങളിൽ കാണപ്പെടുന്ന ശവംതീനി പക്ഷികൾ." },
+            { id: "H7994", heb: "ഷാലക്ക് (Shalak)", eng: "Cormorant", ident: "നീർക്കാക്ക (Cormorant / Osprey)", mal: "നീർക്കാക്ക", cat: "നീർപ്പക്ഷികൾ", note: "'മുങ്ങുക' എന്നാണ് ഈ വാക്കിൻ്റെ അർത്ഥം. മീൻ പിടിക്കാൻ വെള്ളത്തിൽ മുങ്ങുന്ന പക്ഷികളാണിവ." },
+            { id: "H6893", heb: "ക്വാഅത് (Qa'at)", eng: "Pelican", ident: "മരുഭൂമിയിലെ മൂങ്ങ (Desert Owl)", mal: "വേഴാമ്പൽ", cat: "നീർപ്പക്ഷികൾ", note: "പെലിക്കനുകൾക്ക് ജീവിക്കാൻ വെള്ളം ആവശ്യമാണ്. എന്നാൽ ഈ പക്ഷി വെള്ളമില്ലാത്ത ശൂന്യപ്രദേശങ്ങളിലാണ് കാണപ്പെടുന്നത് എന്ന് ബൈബിൾ പറയുന്നു." },
+            { id: "H2624", heb: "ഹസീദഹ് (Chasidah)", eng: "Stork", ident: "കൊക്ക് വർഗ്ഗം (Stork)", mal: "പെരുഞാറ / ഞാറപ്പക്ഷി", cat: "നീർപ്പക്ഷികൾ", note: "അർത്ഥം 'വിശ്വസ്തത'. തങ്ങളുടെ കുഞ്ഞുങ്ങളോടുള്ള ഈ പക്ഷികളുടെ സ്നേഹത്തെ ഇത് സൂചിപ്പിക്കുന്നു." },
+            { id: "H601", heb: "അനഫഹ് (Anafah)", eng: "Heron", ident: "ചതുപ്പിലെ കൊക്ക് (Heron)", mal: "കൊക്ക് / എരണ്ട", cat: "നീർപ്പക്ഷികൾ", note: "ദേഷ്യത്തോടെ ചീറ്റുക എന്നതാണ് ഈ വാക്കിൻ്റെ വേരർത്ഥം." },
+            { id: "H6158", heb: "ഓരെവ് (Orev)", eng: "Raven", ident: "കാക്ക വർഗ്ഗങ്ങൾ (Crow / Raven)", mal: "കാക്ക", cat: "മറ്റു പറവകൾ", note: "ഇരുട്ട് അല്ലെങ്കിൽ വൈകുന്നേരം എന്നർത്ഥം വരുന്ന പദത്തിൽ നിന്നാണ് ഈ പേരുണ്ടായത്." },
+            { id: "H1744", heb: "ഡുക്കിഫത് (Dukiphat)", eng: "Lapwing / Hoopoe", ident: "ഉപ്പൂപ്പ (Hoopoe)", mal: "കുളക്കോഴി / കാട്ടുകോഴി / കുടുമ്മച്ചാത്തൻ", cat: "മറ്റു പറവകൾ", note: "ചാണകത്തിലും മാലിന്യത്തിലും കീടങ്ങളെ തിരയുന്ന പക്ഷി. അതിനാൽ ഇവയെ അശുദ്ധമായി കണക്കാക്കുന്നു." },
+            { id: "H5847", heb: "അതല്ലെഫ് (Atalleph)", eng: "Bat", ident: "വവ്വാൽ (Bat)", mal: "വവ്വാൽ / നരിച്ചീർ", cat: "മറ്റു പറവകൾ", note: "ഇരുട്ടിൽ പറക്കുന്നവ എന്ന ഗണത്തിലാണ് ഇതിനെ പക്ഷികളോടൊപ്പം ഉൾപ്പെടുത്തിയിരിക്കുന്നത്." }
+        ];
+
+        function renderBirds(data) {
+            const grid = document.getElementById('birdGrid');
+            grid.innerHTML = '';
+            data.forEach(bird => {
+                const card = document.createElement('div');
+                card.className = 'bird-card glass-card p-6 rounded-2xl flex flex-col h-full';
+                card.innerHTML = `
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="text-xs font-bold px-2 py-1 bg-[#8b735b]/10 text-[#8b735b] rounded">${bird.id}</span>
+                        <span class="text-[11px] font-semibold text-stone-500 bg-stone-100 px-2 py-1 rounded-full">${bird.cat}</span>
+                    </div>
+                    <h4 class="serif text-2xl font-bold mb-1">${bird.heb}</h4>
+                    <p class="text-[11px] text-stone-400 mb-4 font-mono">Traditional Eng: ${bird.eng}</p>
+                    
+                    <div class="mt-auto space-y-3">
+                        <div class="p-3 bg-white/50 rounded-lg border border-stone-100">
+                            <span class="text-[10px] font-bold text-stone-400 block mb-1">ശാസ്‌ത്രീയ കണ്ടെത്തൽ</span>
+                            <span class="text-sm font-semibold">${bird.ident}</span>
+                        </div>
+                        <div class="p-3 bg-[#c19a6b]/10 rounded-lg border border-[#c19a6b]/20">
+                            <span class="text-[10px] font-bold text-[#8b735b] block mb-1">മലയാള ബൈബിൾ വിവർത്തനം</span>
+                            <span class="text-sm font-bold text-stone-800">${bird.mal}</span>
+                        </div>
+                        <p class="text-xs text-stone-600 leading-relaxed pt-3 border-t border-stone-100 mt-3">
+                            ${bird.note}
+                        </p>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function filterBirds(category) {
+            const btns = document.querySelectorAll('.category-btn');
+            btns.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            if (category === 'all') {
+                renderBirds(birdData);
+            } else {
+                const filtered = birdData.filter(b => b.cat === category);
+                renderBirds(filtered);
+            }
+        }
+
+        function initChart() {
+            const ctx = document.getElementById('categoryChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['ശവംതീനികൾ (Predators)', 'രാത്രിഞ്ചരന്മാർ (Night Dwellers)', 'നീർപ്പക്ഷികൾ (Water Fowls)', 'മറ്റു പറവകൾ (Other)'],
+                    datasets: [{
+                        data: [5, 4, 6, 3],
+                        backgroundColor: ['#2c241e', '#8b735b', '#c19a6b', '#e5e7eb'],
+                        borderWidth: 0,
+                        hoverOffset: 15
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                padding: 20,
+                                font: {
+                                    family: "'Noto Sans Malayalam', sans-serif",
+                                    size: 12
+                                }
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: (context) => ` ${context.label}: ${context.raw} പക്ഷികൾ`
+                            },
+                            titleFont: {
+                                family: "'Noto Sans Malayalam', sans-serif"
+                            },
+                            bodyFont: {
+                                family: "'Noto Sans Malayalam', sans-serif"
+                            }
+                        }
+                    },
+                    cutout: '70%'
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderBirds(birdData);
+            initChart();
+        });
+    </script>
+</body>
+</html>
