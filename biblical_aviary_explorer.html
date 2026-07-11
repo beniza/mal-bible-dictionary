@@ -60,6 +60,12 @@
             transform: translateY(-4px);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
+
+        .verse-tab.active {
+            background-color: white;
+            color: var(--accent);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+        }
     </style>
 </head>
 <body class="min-h-screen">
@@ -91,97 +97,169 @@
             <div class="mb-10 text-center">
                 <h2 class="text-3xl font-bold serif mb-4">ലേവ്യപുസ്തകം 11:13-19 | ആവർത്തനപുസ്തകം 14:12-18</h2>
                 <p class="text-stone-600 max-w-3xl mx-auto">
-                    വിവിധ മലയാളം, ഇംഗ്ലീഷ് ബൈബിൾ പരിഭാഷകളിൽ ഈ ഭാഗം നൽകിയിരിക്കുന്നു.
+                    വിവിധ മലയാളം, ഇംഗ്ലീഷ് ബൈബിൾ പരിഭാഷകളിൽ ഈ ഭാഗം നൽകിയിരിക്കുന്നു. ഓരോ കാർഡിലും LEV, DEU ടാബുകൾ മാറ്റിക്കണ്ട് താരതമ്യം ചെയ്യാം.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <!-- BSI OV -->
-                <div class="glass-card p-6 rounded-2xl border border-stone-200 shadow-sm">
+                <div class="glass-card verse-card p-6 rounded-2xl border border-stone-200 shadow-sm" data-translation="bsi-ov">
                     <div class="flex items-center justify-between mb-4 border-b border-stone-100 pb-2">
                         <h3 class="font-bold text-lg text-[#8b735b]">BSI OV (സത്യവേദപുസ്തകം)</h3>
                         <span class="text-[10px] uppercase font-bold text-stone-400 bg-stone-100 px-2 py-1 rounded">Malayalam</span>
                     </div>
-                    <p class="text-sm text-stone-700 leading-relaxed serif">
-                        <b class="text-[#c19a6b]">12</b> പക്ഷികളിൽ തിന്നരുതാത്തവ: കടൽറാഞ്ചൻ, ചെമ്പരുന്തു, കഴുകൻ, <b class="text-[#c19a6b]">13</b> ചെങ്ങാലിപ്പരുന്തു, ഗൃദ്ധ്രം, അതതുവിധം പരുന്തു <b class="text-[#c19a6b]">14</b> അതതുവിധം കാക്ക, <b class="text-[#c19a6b]">15</b> ഒട്ടകപക്ഷി, പുള്ളു, കടൽക്കാക്ക, അതതുവിധം പ്രാപ്പിടിയൻ, <b class="text-[#c19a6b]">16</b> നത്തു, കൂമൻ, മൂങ്ങാ, വേഴാമ്പൽ, <b class="text-[#c19a6b]">17</b> കുടുമ്മച്ചാത്തൻ, നീർകാക്ക, <b class="text-[#c19a6b]">18</b> പെരുഞാറ, അതതുവിധം കൊക്കു, കുളക്കോഴി, നരിച്ചീർ എന്നിവയാകുന്നു.
-                    </p>
+                    <div class="mb-4 inline-flex rounded-full bg-stone-100 p-1" role="tablist" aria-label="BSI OV passages">
+                        <button id="bsi-ov-tab-lev" type="button" class="verse-tab rounded-full px-3 py-2 text-xs font-semibold text-stone-500 transition-all" data-verse-tab="lev" role="tab" aria-selected="false" aria-controls="bsi-ov-panel-lev" onclick="switchVerseTab(this, 'lev')">LEV 11:13-19</button>
+                        <button id="bsi-ov-tab-deu" type="button" class="verse-tab active rounded-full px-3 py-2 text-xs font-semibold text-stone-500 transition-all" data-verse-tab="deu" role="tab" aria-selected="true" aria-controls="bsi-ov-panel-deu" onclick="switchVerseTab(this, 'deu')">DEU 14:12-18</button>
+                    </div>
+                    <div class="space-y-4">
+                        <p id="bsi-ov-panel-lev" class="text-sm text-stone-700 leading-relaxed serif" data-verse-panel="lev" role="tabpanel" aria-labelledby="bsi-ov-tab-lev" hidden>
+                            ലേവ്യ 11:13 പക്ഷികളിൽ നിങ്ങൾക്കു അറെപ്പായിരിക്കേണ്ടുന്നവ ഇവ: അവയെ തിന്നരുതു; അവ അറെപ്പു ആകുന്നു: കഴുകൻ, ചെമ്പരുന്തു, 14 കടൽറാഞ്ചൻ, ഗൃദ്ധ്രം, അതതു വിധം പരുന്തു, 15 അതതു വിധം കാക്ക, ഒട്ടകപ്പക്ഷി, 16 പുള്ളു, കടൽകാക്ക, അതതു വിധം പ്രാപ്പിടിയൻ, 17 നത്തു, നീർക്കാക്ക, കൂമൻ, മൂങ്ങ, 18 വേഴാമ്പൽ, കുടുമ്മച്ചാത്തൻ, പെരിഞാറ, 19 അതതതു വിധം കൊക്കു, കുളക്കോഴി, നരിച്ചീർ എന്നിവയും
+                        </p>
+                        <p id="bsi-ov-panel-deu" class="text-sm text-stone-700 leading-relaxed serif" data-verse-panel="deu" role="tabpanel" aria-labelledby="bsi-ov-tab-deu">
+                            പക്ഷികളിൽ തിന്നരുതാത്തവ: കടൽറാഞ്ചൻ, ചെമ്പരുന്തു, കഴുകൻ, ചെങ്ങാലിപ്പരുന്തു, ഗൃദ്ധ്രം, അതതുവിധം പരുന്തു അതതുവിധം കാക്ക, ഒട്ടകപക്ഷി, പുള്ളു, കടൽക്കാക്ക, അതതുവിധം പ്രാപ്പിടിയൻ, നത്തു, കൂമൻ, മൂങ്ങാ, വേഴാമ്പൽ, കുടുമ്മച്ചാത്തൻ, നീർകാക്ക, പെരുഞാറ, അതതുവിധം കൊക്കു, കുളക്കോഴി, നരിച്ചീർ എന്നിവയാകുന്നു.
+                        </p>
+                    </div>
                 </div>
 
                 <!-- BSI CL -->
-                <div class="glass-card p-6 rounded-2xl border border-stone-200 shadow-sm">
+                <div class="glass-card verse-card p-6 rounded-2xl border border-stone-200 shadow-sm" data-translation="bsi-cl">
                     <div class="flex items-center justify-between mb-4 border-b border-stone-100 pb-2">
                         <h3 class="font-bold text-lg text-[#8b735b]">BSI CL (തിരുവചനം)</h3>
                         <span class="text-[10px] uppercase font-bold text-stone-400 bg-stone-100 px-2 py-1 rounded">Malayalam</span>
                     </div>
-                    <p class="text-sm text-stone-700 leading-relaxed serif">
-                        <b class="text-[#c19a6b]">12</b> നിങ്ങൾക്കു ഭക്ഷ്യമല്ലാത്ത പക്ഷികൾ ഇവയാണ്: കടൽറാഞ്ചി, ചെമ്പരുന്ത്, <b class="text-[#c19a6b]">13</b> കഴുകൻ, ചെങ്ങാലിപ്പരുന്ത്, ഗൃദ്ധ്രം, <b class="text-[#c19a6b]">14</b> മറ്റു പരുന്തുവർഗങ്ങൾ, കാക്കയുടെ വർഗങ്ങളെല്ലാം, <b class="text-[#c19a6b]">15</b> ഒട്ടകപ്പക്ഷി, പുള്ള്, കടൽക്കാക്ക, പ്രാപ്പിടിയൻവർഗങ്ങൾ, <b class="text-[#c19a6b]">16</b> നത്ത്, കൂമൻ, മൂങ്ങ, വേഴാമ്പൽ, <b class="text-[#c19a6b]">17</b> കുടുമ്മച്ചാത്തൻ, നീർക്കാക്ക, പെരുംഞാറ, <b class="text-[#c19a6b]">18</b> കൊക്കുവർഗങ്ങൾ, കുളക്കോഴി, നരിച്ചീർ. <b class="text-[#c19a6b]">19</b> ചിറകുള്ള പ്രാണികൾ നിങ്ങൾക്ക് അശുദ്ധമാകുന്നു; <b class="text-[#c19a6b]">20</b> അവയെ ഭക്ഷിക്കരുത്; ശുദ്ധിയുള്ള പക്ഷികളെയെല്ലാം നിങ്ങൾക്കു ഭക്ഷിക്കാം.
-                    </p>
+                    <div class="mb-4 inline-flex rounded-full bg-stone-100 p-1" role="tablist" aria-label="BSI CL passages">
+                        <button id="bsi-cl-tab-lev" type="button" class="verse-tab rounded-full px-3 py-2 text-xs font-semibold text-stone-500 transition-all" data-verse-tab="lev" role="tab" aria-selected="false" aria-controls="bsi-cl-panel-lev" onclick="switchVerseTab(this, 'lev')">LEV 11:13-19</button>
+                        <button id="bsi-cl-tab-deu" type="button" class="verse-tab active rounded-full px-3 py-2 text-xs font-semibold text-stone-500 transition-all" data-verse-tab="deu" role="tab" aria-selected="true" aria-controls="bsi-cl-panel-deu" onclick="switchVerseTab(this, 'deu')">DEU 14:12-18</button>
+                    </div>
+                    <div class="space-y-4">
+                        <p id="bsi-cl-panel-lev" class="text-sm text-stone-700 leading-relaxed serif" data-verse-panel="lev" role="tabpanel" aria-labelledby="bsi-cl-tab-lev" hidden>
+                            13 പക്ഷികളിൽ കഴുകൻ, ചെമ്പരുന്ത്, 14 കടൽറാഞ്ചി, പരുന്ത്, പ്രാപ്പിടിയൻ മുതലായവ, 15 പരുന്തുവർഗം, കാക്കയുടെ ഇനത്തിൽപ്പെട്ട പക്ഷികൾ, 16 ഒട്ടകപ്പക്ഷി, കടൽക്കാക്ക, മൂങ്ങയുടെ വർഗത്തിലുള്ള പക്ഷികൾ, 17 നത്ത്, നീർക്കാക്ക, പെരുംനത്ത്, 18 നീർക്കോഴി, വേഴാമ്പൽ, ഗൃദ്ധ്രം, കൊക്ക്, 19 പൊന്മാൻ, നരിച്ചീർ എന്നിവയെ നിങ്ങൾ ഭക്ഷിക്കരുത്. അവയെ മലിനമായി കരുതണം.
+                        </p>
+                        <p id="bsi-cl-panel-deu" class="text-sm text-stone-700 leading-relaxed serif" data-verse-panel="deu" role="tabpanel" aria-labelledby="bsi-cl-tab-deu">
+                            നിങ്ങൾക്കു ഭക്ഷ്യമല്ലാത്ത പക്ഷികൾ ഇവയാണ്: കടൽറാഞ്ചി, ചെമ്പരുന്ത്, കഴുകൻ, ചെങ്ങാലിപ്പരുന്ത്, ഗൃദ്ധ്രം, മറ്റു പരുന്തുവർഗങ്ങൾ, കാക്കയുടെ വർഗങ്ങളെല്ലാം, ഒട്ടകപ്പക്ഷി, പുള്ള്, കടൽക്കാക്ക, പ്രാപ്പിടിയൻവർഗങ്ങൾ, നത്ത്, കൂമൻ, മൂങ്ങ, വേഴാമ്പൽ, കുടുമ്മച്ചാത്തൻ, നീർക്കാക്ക, പെരുംഞാറ, കൊക്കുവർഗങ്ങൾ, കുളക്കോഴി, നരിച്ചീർ. ചിറകുള്ള പ്രാണികൾ നിങ്ങൾക്ക് അശുദ്ധമാകുന്നു; അവയെ ഭക്ഷിക്കരുത്; ശുദ്ധിയുള്ള പക്ഷികളെയെല്ലാം നിങ്ങൾക്കു ഭക്ഷിക്കാം.
+                        </p>
+                    </div>
                 </div>
 
                 <!-- MCV -->
-                <div class="glass-card p-6 rounded-2xl border border-stone-200 shadow-sm">
+                <div class="glass-card verse-card p-6 rounded-2xl border border-stone-200 shadow-sm" data-translation="mcv">
                     <div class="flex items-center justify-between mb-4 border-b border-stone-100 pb-2">
                         <h3 class="font-bold text-lg text-[#8b735b]">MCV (സമകാലിക മലയാളം)</h3>
                         <span class="text-[10px] uppercase font-bold text-stone-400 bg-stone-100 px-2 py-1 rounded">Malayalam</span>
                     </div>
-                    <p class="text-sm text-stone-700 leading-relaxed serif">
-                        <b class="text-[#c19a6b]">12</b> എന്നാൽ നിങ്ങൾക്കു ഭക്ഷിക്കാൻ പാടില്ലാത്തവ ഇവയാകുന്നു: കഴുകൻ, ചെമ്പരുന്ത്, കരിമ്പരുന്ത്, <b class="text-[#c19a6b]">13</b> ഗൃദ്ധ്രം, പരുന്ത്, എല്ലാ ഇനത്തിലുംപെട്ട ഇരപിടിയൻപക്ഷി, <b class="text-[#c19a6b]">14</b> എല്ലാ ഇനത്തിലുംപെട്ട കാക്ക, <b class="text-[#c19a6b]">15</b> ഒട്ടകപ്പക്ഷി, പുള്ള്, കടൽക്കാക്ക, എല്ലാ ഇനത്തിലുംപെട്ട കഴുകൻ, <b class="text-[#c19a6b]">16</b> നത്ത്, നീർക്കാക്ക, കൂമൻ, <b class="text-[#c19a6b]">17</b> മൂങ്ങ, വേഴാമ്പൽ, വെള്ളക്കഴുകൻ, <b class="text-[#c19a6b]">18</b> പെരിഞ്ഞാറ, ഏതിനത്തിലുംപെട്ട കൊക്ക്, കുളക്കോഴി, വവ്വാൽ. 
-                    </p>
+                    <div class="mb-4 inline-flex rounded-full bg-stone-100 p-1" role="tablist" aria-label="MCV passages">
+                        <button id="mcv-tab-lev" type="button" class="verse-tab rounded-full px-3 py-2 text-xs font-semibold text-stone-500 transition-all" data-verse-tab="lev" role="tab" aria-selected="false" aria-controls="mcv-panel-lev" onclick="switchVerseTab(this, 'lev')">LEV 11:13-19</button>
+                        <button id="mcv-tab-deu" type="button" class="verse-tab active rounded-full px-3 py-2 text-xs font-semibold text-stone-500 transition-all" data-verse-tab="deu" role="tab" aria-selected="true" aria-controls="mcv-panel-deu" onclick="switchVerseTab(this, 'deu')">DEU 14:12-18</button>
+                    </div>
+                    <div class="space-y-4">
+                        <p id="mcv-panel-lev" class="text-sm text-stone-700 leading-relaxed serif" data-verse-panel="lev" role="tabpanel" aria-labelledby="mcv-tab-lev" hidden>
+                            13 “ ‘പറവകളിൽ നിങ്ങൾക്ക് നിഷിദ്ധമായിരിക്കുന്നവ ഇവയാണ്: അവ അശുദ്ധമാകുകയാൽ നിങ്ങൾ അവ ഭക്ഷിക്കരുത്: കഴുകൻ,a ചെമ്പരുന്ത്, കരിമ്പരുന്ത് 14 ഗൃദ്ധ്രം, ഏതിനത്തിലുംപെട്ട പരുന്ത്, 15 എല്ലാ ഇനത്തിലുംപെട്ട കാക്ക, 16 ഒട്ടകപ്പക്ഷി, പുള്ള്, കടൽക്കാക്ക, എല്ലാ ഇനത്തിലുംപെട്ട കഴുകൻ, 17 നത്ത്, നീർക്കാക്ക, കൂമൻ, 18 മൂങ്ങ, വേഴാമ്പൽ, വെള്ളക്കഴുകൻ, 19 പെരിഞ്ഞാറ, ഏതിനത്തിലുംപെട്ട കൊക്ക്, കുളക്കോഴി, വവ്വാൽ.
+                        </p>
+                        <p id="mcv-panel-deu" class="text-sm text-stone-700 leading-relaxed serif" data-verse-panel="deu" role="tabpanel" aria-labelledby="mcv-tab-deu">
+                            എന്നാൽ നിങ്ങൾക്കു ഭക്ഷിക്കാൻ പാടില്ലാത്തവ ഇവയാകുന്നു: കഴുകൻ, ചെമ്പരുന്ത്, കരിമ്പരുന്ത്, ഗൃദ്ധ്രം, പരുന്ത്, എല്ലാ ഇനത്തിലുംപെട്ട ഇരപിടിയൻപക്ഷി, എല്ലാ ഇനത്തിലുംപെട്ട കാക്ക, ഒട്ടകപ്പക്ഷി, പുള്ള്, കടൽക്കാക്ക, എല്ലാ ഇനത്തിലുംപെട്ട കഴുകൻ, നത്ത്, നീർക്കാക്ക, കൂമൻ, മൂങ്ങ, വേഴാമ്പൽ, വെള്ളക്കഴുകൻ, പെരിഞ്ഞാറ, ഏതിനത്തിലുംപെട്ട കൊക്ക്, കുളക്കോഴി, വവ്വാൽ.
+                        </p>
+                    </div>
                 </div>
 
                 <!-- POC -->
-                <div class="glass-card p-6 rounded-2xl border border-stone-200 shadow-sm">
+                <div class="glass-card verse-card p-6 rounded-2xl border border-stone-200 shadow-sm" data-translation="poc">
                     <div class="flex items-center justify-between mb-4 border-b border-stone-100 pb-2">
                         <h3 class="font-bold text-lg text-[#8b735b]">POC (കത്തോലിക്ക ബൈബിൾ)</h3>
                         <span class="text-[10px] uppercase font-bold text-stone-400 bg-stone-100 px-2 py-1 rounded">Malayalam</span>
                     </div>
-                    <p class="text-sm text-stone-700 leading-relaxed serif">
-                        <b class="text-[#c19a6b]">12</b> നിങ്ങൾ ഭക്ഷിക്കരുതാത്ത പക്ഷികൾ ഇവയാണ്: <b class="text-[#c19a6b]">13</b> എല്ലാ തരത്തിലുംപെട്ട കഴുകൻ, ചെമ്പരുന്ത്, <b class="text-[#c19a6b]">14</b> കരിമ്പരുന്ത്, ഗൃദ്ധ്രം, പ്രാപ്പിടിയൻ, പരുന്ത്, കാക്ക, <b class="text-[#c19a6b]">15</b> ഒട്ടകപ്പക്ഷി, രാനത്ത്, കടൽപ്പാത്ത, ചെങ്ങാലിപ്പരുന്ത്, <b class="text-[#c19a6b]">16</b> മൂങ്ങ, കൂമൻ, അരയന്നം, <b class="text-[#c19a6b]">17</b> ഞാറപ്പക്ഷി, കരിങ്കഴുകൻ, നീർക്കാക്ക, <b class="text-[#c19a6b]">18</b> കൊക്ക്, എരണ്ട, കാട്ടുകോഴി, നരിച്ചീർ. 
-                    </p>
+                    <div class="mb-4 inline-flex rounded-full bg-stone-100 p-1" role="tablist" aria-label="POC passages">
+                        <button id="poc-tab-lev" type="button" class="verse-tab rounded-full px-3 py-2 text-xs font-semibold text-stone-500 transition-all" data-verse-tab="lev" role="tab" aria-selected="false" aria-controls="poc-panel-lev" onclick="switchVerseTab(this, 'lev')">LEV 11:13-19</button>
+                        <button id="poc-tab-deu" type="button" class="verse-tab active rounded-full px-3 py-2 text-xs font-semibold text-stone-500 transition-all" data-verse-tab="deu" role="tab" aria-selected="true" aria-controls="poc-panel-deu" onclick="switchVerseTab(this, 'deu')">DEU 14:12-18</button>
+                    </div>
+                    <div class="space-y-4">
+                        <p id="poc-panel-lev" class="text-sm text-stone-700 leading-relaxed serif" data-verse-panel="lev" role="tabpanel" aria-labelledby="poc-tab-lev" hidden>
+                            13 പക്ഷികളിൽ നിങ്ങൾക്കു നിന്ദ്യമായിരിക്കേണ്ടവ ഇവയാണ്. ഇവനിങ്ങൾ ഭക്ഷിക്കരുത്. ഇവയെല്ലാം നിന്ദ്യമാണ്. എല്ലാത്തരത്തിലുംപെട്ട കഴുകൻ, ചെമ്പരുന്ത്, കരിംപരുന്ത്, 14 പരുന്ത്, പ്രാപ്പിടിയൻ, 15 കാക്ക, 16 ഒട്ടകപ്പക്ഷി, രാനത്ത്, കടൽപ്പാത്ത, ചെങ്ങാലിപ്പരുന്ത്, 17 മൂങ്ങ, നീർകാക്ക, കൂമൻ, 18 അരയന്നം, ഞാറപ്പക്ഷി, കരിങ്കഴുകൻ, 19 കൊക്ക്, എരണ്ട, കാട്ടുകോഴി, നരിച്ചീർ.
+                        </p>
+                        <p id="poc-panel-deu" class="text-sm text-stone-700 leading-relaxed serif" data-verse-panel="deu" role="tabpanel" aria-labelledby="poc-tab-deu">
+                            നിങ്ങൾ ഭക്ഷിക്കരുതാത്ത പക്ഷികൾ ഇവയാണ്: എല്ലാ തരത്തിലുംപെട്ട കഴുകൻ, ചെമ്പരുന്ത്, കരിമ്പരുന്ത്, ഗൃദ്ധ്രം, പ്രാപ്പിടിയൻ, പരുന്ത്, കാക്ക, ഒട്ടകപ്പക്ഷി, രാനത്ത്, കടൽപ്പാത്ത, ചെങ്ങാലിപ്പരുന്ത്, മൂങ്ങ, കൂമൻ, അരയന്നം, ഞാറപ്പക്ഷി, കരിങ്കഴുകൻ, നീർക്കാക്ക, കൊക്ക്, എരണ്ട, കാട്ടുകോഴി, നരിച്ചീർ.
+                        </p>
+                    </div>
                 </div>
 
                 <!-- KJV -->
-                <div class="glass-card p-6 rounded-2xl border border-stone-200 shadow-sm">
+                <div class="glass-card verse-card p-6 rounded-2xl border border-stone-200 shadow-sm" data-translation="kjv">
                     <div class="flex items-center justify-between mb-4 border-b border-stone-100 pb-2">
                         <h3 class="font-bold text-lg text-[#8b735b]">KJV</h3>
                         <span class="text-[10px] uppercase font-bold text-stone-400 bg-stone-100 px-2 py-1 rounded">English</span>
                     </div>
-                    <p class="text-sm text-stone-700 leading-relaxed font-serif">
-                        <b class="text-[#c19a6b]">12</b> But these are they of which ye shall not eat: the eagle, and the ossifrage, and the ospray, <b class="text-[#c19a6b]">13</b> and the glede, and the kite, and the vulture after his kind, <b class="text-[#c19a6b]">14</b> and every raven after his kind, <b class="text-[#c19a6b]">15</b> and the owl, and the night hawk, and the cuckow, and the hawk after his kind, <b class="text-[#c19a6b]">16</b> the little owl, and the great owl, and the swan, <b class="text-[#c19a6b]">17</b> and the pelican, and the gier eagle, and the cormorant, <b class="text-[#c19a6b]">18</b> and the stork, and the heron after her kind, and the lapwing, and the bat.
-                    </p>
+                    <div class="mb-4 inline-flex rounded-full bg-stone-100 p-1" role="tablist" aria-label="KJV passages">
+                        <button id="kjv-tab-lev" type="button" class="verse-tab rounded-full px-3 py-2 text-xs font-semibold text-stone-500 transition-all" data-verse-tab="lev" role="tab" aria-selected="false" aria-controls="kjv-panel-lev" onclick="switchVerseTab(this, 'lev')">LEV 11:13-19</button>
+                        <button id="kjv-tab-deu" type="button" class="verse-tab active rounded-full px-3 py-2 text-xs font-semibold text-stone-500 transition-all" data-verse-tab="deu" role="tab" aria-selected="true" aria-controls="kjv-panel-deu" onclick="switchVerseTab(this, 'deu')">DEU 14:12-18</button>
+                    </div>
+                    <div class="space-y-4">
+                        <p id="kjv-panel-lev" class="text-sm text-stone-700 leading-relaxed font-serif" data-verse-panel="lev" role="tabpanel" aria-labelledby="kjv-tab-lev" hidden>
+                            13 And these are they which ye shall have in abomination among the fowls; they shall not be eaten, they are an abomination: the eagle, and the ossifrage, and the ospray, 14 and the vulture, and the kite after his kind; 15 every raven after his kind; 16 and the owl, and the night hawk, and the cuckow, and the hawk after his kind, 17 and the little owl, and the cormorant, and the great owl, 18 and the swan, and the pelican, and the gier eagle, 19 and the stork, the heron after her kind, and the lapwing, and the bat.
+                        </p>
+                        <p id="kjv-panel-deu" class="text-sm text-stone-700 leading-relaxed font-serif" data-verse-panel="deu" role="tabpanel" aria-labelledby="kjv-tab-deu">
+                            But these are they of which ye shall not eat: the eagle, and the ossifrage, and the ospray, and the glede, and the kite, and the vulture after his kind, and every raven after his kind, and the owl, and the night hawk, and the cuckow, and the hawk after his kind, the little owl, and the great owl, and the swan, and the pelican, and the gier eagle, and the cormorant, and the stork, and the heron after her kind, and the lapwing, and the bat.
+                        </p>
+                    </div>
                 </div>
 
                 <!-- NIV -->
-                <div class="glass-card p-6 rounded-2xl border border-stone-200 shadow-sm">
+                <div class="glass-card verse-card p-6 rounded-2xl border border-stone-200 shadow-sm" data-translation="niv">
                     <div class="flex items-center justify-between mb-4 border-b border-stone-100 pb-2">
                         <h3 class="font-bold text-lg text-[#8b735b]">NIV</h3>
                         <span class="text-[10px] uppercase font-bold text-stone-400 bg-stone-100 px-2 py-1 rounded">English</span>
                     </div>
-                    <p class="text-sm text-stone-700 leading-relaxed font-serif">
-                        <b class="text-[#c19a6b]">12</b> But these you may not eat: the eagle, the vulture, the black vulture, <b class="text-[#c19a6b]">13</b> the red kite, the black kite, any kind of falcon, <b class="text-[#c19a6b]">14</b> any kind of raven, <b class="text-[#c19a6b]">15</b> the horned owl, the screech owl, the gull, any kind of hawk, <b class="text-[#c19a6b]">16</b> the little owl, the great owl, the white owl, <b class="text-[#c19a6b]">17</b> the desert owl, the osprey, the cormorant, <b class="text-[#c19a6b]">18</b> the stork, any kind of heron, the hoopoe and the bat.
-                    </p>
+                    <div class="mb-4 inline-flex rounded-full bg-stone-100 p-1" role="tablist" aria-label="NIV passages">
+                        <button id="niv-tab-lev" type="button" class="verse-tab rounded-full px-3 py-2 text-xs font-semibold text-stone-500 transition-all" data-verse-tab="lev" role="tab" aria-selected="false" aria-controls="niv-panel-lev" onclick="switchVerseTab(this, 'lev')">LEV 11:13-19</button>
+                        <button id="niv-tab-deu" type="button" class="verse-tab active rounded-full px-3 py-2 text-xs font-semibold text-stone-500 transition-all" data-verse-tab="deu" role="tab" aria-selected="true" aria-controls="niv-panel-deu" onclick="switchVerseTab(this, 'deu')">DEU 14:12-18</button>
+                    </div>
+                    <div class="space-y-4">
+                        <p id="niv-panel-lev" class="text-sm text-stone-700 leading-relaxed font-serif" data-verse-panel="lev" role="tabpanel" aria-labelledby="niv-tab-lev" hidden>
+                            13 “ These are the birds you are to regard as unclean and not eat because they are unclean: the eagle,a the vulture, the black vulture, 14 the red kite, any kind of black kite, 15 any kind of raven, 16 the horned owl, the screech owl, the gull, any kind of hawk, 17 the little owl, the cormorant, the great owl, 18 the white owl, the desert owl, the osprey, 19 the stork, any kind of heron, the hoopoe and the bat.
+                        </p>
+                        <p id="niv-panel-deu" class="text-sm text-stone-700 leading-relaxed font-serif" data-verse-panel="deu" role="tabpanel" aria-labelledby="niv-tab-deu">
+                            But these you may not eat: the eagle, the vulture, the black vulture, the red kite, the black kite, any kind of falcon, any kind of raven, the horned owl, the screech owl, the gull, any kind of hawk, the little owl, the great owl, the white owl, the desert owl, the osprey, the cormorant, the stork, any kind of heron, the hoopoe and the bat.
+                        </p>
+                    </div>
                 </div>
 
                 <!-- YLT -->
-                <div class="glass-card p-6 rounded-2xl border border-stone-200 shadow-sm">
+                <div class="glass-card verse-card p-6 rounded-2xl border border-stone-200 shadow-sm" data-translation="ylt">
                     <div class="flex items-center justify-between mb-4 border-b border-stone-100 pb-2">
                         <h3 class="font-bold text-lg text-[#8b735b]">YLT</h3>
                         <span class="text-[10px] uppercase font-bold text-stone-400 bg-stone-100 px-2 py-1 rounded">English</span>
                     </div>
-                    <p class="text-sm text-stone-700 leading-relaxed font-serif">
-                        <b class="text-[#c19a6b]">12</b> and these [are] they of which ye do not eat: the eagle, and the ossifrage, and the ospray, <b class="text-[#c19a6b]">13</b> and the glede, and the kite, and the vulture after its kind, <b class="text-[#c19a6b]">14</b> and every raven after its kind; <b class="text-[#c19a6b]">15</b> and the owl, and the night-hawk, and the cuckoo, and the hawk after its kind; <b class="text-[#c19a6b]">16</b> the [little] owl, and the [great] owl, and the swan, <b class="text-[#c19a6b]">17</b> and the pelican, and the gier-eagle, and the cormorant, <b class="text-[#c19a6b]">18</b> and the stork, and the heron after its kind, and the lapwing, and the bat; 
-                    </p>
+                    <div class="mb-4 inline-flex rounded-full bg-stone-100 p-1" role="tablist" aria-label="YLT passages">
+                        <button id="ylt-tab-lev" type="button" class="verse-tab rounded-full px-3 py-2 text-xs font-semibold text-stone-500 transition-all" data-verse-tab="lev" role="tab" aria-selected="false" aria-controls="ylt-panel-lev" onclick="switchVerseTab(this, 'lev')">LEV 11:13-19</button>
+                        <button id="ylt-tab-deu" type="button" class="verse-tab active rounded-full px-3 py-2 text-xs font-semibold text-stone-500 transition-all" data-verse-tab="deu" role="tab" aria-selected="true" aria-controls="ylt-panel-deu" onclick="switchVerseTab(this, 'deu')">DEU 14:12-18</button>
+                    </div>
+                    <div class="space-y-4">
+                        <p id="ylt-panel-lev" class="text-sm text-stone-700 leading-relaxed font-serif" data-verse-panel="lev" role="tabpanel" aria-labelledby="ylt-tab-lev" hidden>
+                            13 ‘And these ye do abominate of the fowl; they are not eaten, an abomination they [are]: the eagle, and the ossifrage, and the ospray,14 and the vulture, and the kite after its kind,15 every raven after its kind,16 and the owl, and the night-hawk, and the cuckoo, and the hawk after its kind,17 and the little owl, and the cormorant, and the great owl,18 and the swan, and the pelican, and the gier eagle,19 and the stork, the heron after its kind, and the lapwing, and the bat.
+                        </p>
+                        <p id="ylt-panel-deu" class="text-sm text-stone-700 leading-relaxed font-serif" data-verse-panel="deu" role="tabpanel" aria-labelledby="ylt-tab-deu">
+                            and these [are] they of which ye do not eat: the eagle, and the ossifrage, and the ospray, and the glede, and the kite, and the vulture after its kind, and every raven after its kind; and the owl, and the night-hawk, and the cuckoo, and the hawk after its kind; the [little] owl, and the [great] owl, and the swan, and the pelican, and the gier-eagle, and the cormorant, and the stork, and the heron after its kind, and the lapwing, and the bat;
+                        </p>
+                    </div>
                 </div>
 
                 <!-- NKJV -->
-                <div class="glass-card p-6 rounded-2xl border border-stone-200 shadow-sm">
+                <div class="glass-card verse-card p-6 rounded-2xl border border-stone-200 shadow-sm" data-translation="nkjv">
                     <div class="flex items-center justify-between mb-4 border-b border-stone-100 pb-2">
                         <h3 class="font-bold text-lg text-[#8b735b]">NKJV</h3>
                         <span class="text-[10px] uppercase font-bold text-stone-400 bg-stone-100 px-2 py-1 rounded">English</span>
                     </div>
-                    <p class="text-sm text-stone-700 leading-relaxed font-serif">
-                        <b class="text-[#c19a6b]">12</b> “But these you shall not eat: the eagle, the vulture, the buzzard, <b class="text-[#c19a6b]">13</b> “the red kite, the falcon, and the kite after their kinds; <b class="text-[#c19a6b]">14</b> “every raven after its kind; <b class="text-[#c19a6b]">15</b> “the ostrich, the short-eared owl, the sea gull, and the hawk after their kinds; <b class="text-[#c19a6b]">16</b> “the little owl, the screech owl, the white owl, <b class="text-[#c19a6b]">17</b> “the jackdaw, the carrion vulture, the fisher owl, <b class="text-[#c19a6b]">18</b> “the stork, the heron after its kind, and the hoopoe and the bat.
-                    </p>
+                    <div class="mb-4 inline-flex rounded-full bg-stone-100 p-1" role="tablist" aria-label="NKJV passages">
+                        <button id="nkjv-tab-lev" type="button" class="verse-tab rounded-full px-3 py-2 text-xs font-semibold text-stone-500 transition-all" data-verse-tab="lev" role="tab" aria-selected="false" aria-controls="nkjv-panel-lev" onclick="switchVerseTab(this, 'lev')">LEV 11:13-19</button>
+                        <button id="nkjv-tab-deu" type="button" class="verse-tab active rounded-full px-3 py-2 text-xs font-semibold text-stone-500 transition-all" data-verse-tab="deu" role="tab" aria-selected="true" aria-controls="nkjv-panel-deu" onclick="switchVerseTab(this, 'deu')">DEU 14:12-18</button>
+                    </div>
+                    <div class="space-y-4">
+                        <p id="nkjv-panel-lev" class="text-sm text-stone-700 leading-relaxed font-serif" data-verse-panel="lev" role="tabpanel" aria-labelledby="nkjv-tab-lev" hidden>
+                            13 ¶‘And these you shall regard as an abomination among the birds; they shall not be eaten, they are an abomination: the eagle, the vulture, the buzzard,14 ‘the kite, and the falcon after its kind;15 ‘every raven after its kind,16 ‘the ostrich, the short-eared owl, the sea gull, and the hawk after its kind;17 ‘the little owl, the fisher owl, and the screech owl;18 ‘the white owl, the jackdaw, and the carrion vulture;19 ‘the stork, the heron after its kind, the hoopoe, and the bat.
+                        </p>
+                        <p id="nkjv-panel-deu" class="text-sm text-stone-700 leading-relaxed font-serif" data-verse-panel="deu" role="tabpanel" aria-labelledby="nkjv-tab-deu">
+                            “But these you shall not eat: the eagle, the vulture, the buzzard, “the red kite, the falcon, and the kite after their kinds; “every raven after its kind; “the ostrich, the short-eared owl, the sea gull, and the hawk after their kinds; “the little owl, the screech owl, the white owl, “the jackdaw, the carrion vulture, the fisher owl, “the stork, the heron after its kind, and the hoopoe and the bat.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -315,6 +393,26 @@
             { id: "H1744", heb: "ഡുക്കിഫത് (Dukiphat)", eng: "Lapwing / Hoopoe", ident: "ഉപ്പൂപ്പ (Hoopoe)", mal: "കുളക്കോഴി / കാട്ടുകോഴി / കുടുമ്മച്ചാത്തൻ", cat: "മറ്റു പറവകൾ", note: "ചാണകത്തിലും മാലിന്യത്തിലും കീടങ്ങളെ തിരയുന്ന പക്ഷി. അതിനാൽ ഇവയെ അശുദ്ധമായി കണക്കാക്കുന്നു." },
             { id: "H5847", heb: "അതല്ലെഫ് (Atalleph)", eng: "Bat", ident: "വവ്വാൽ (Bat)", mal: "വവ്വാൽ / നരിച്ചീർ", cat: "മറ്റു പറവകൾ", note: "ഇരുട്ടിൽ പറക്കുന്നവ എന്ന ഗണത്തിലാണ് ഇതിനെ പക്ഷികളോടൊപ്പം ഉൾപ്പെടുത്തിയിരിക്കുന്നത്." }
         ];
+
+        function switchVerseTab(button, book) {
+            const card = button.closest('.verse-card');
+            if (!card) {
+                return;
+            }
+
+            const tabs = card.querySelectorAll('[data-verse-tab]');
+            const panels = card.querySelectorAll('[data-verse-panel]');
+
+            tabs.forEach(tab => {
+                const isActive = tab.dataset.verseTab === book;
+                tab.classList.toggle('active', isActive);
+                tab.setAttribute('aria-selected', String(isActive));
+            });
+
+            panels.forEach(panel => {
+                panel.hidden = panel.dataset.versePanel !== book;
+            });
+        }
 
         function renderBirds(data) {
             const grid = document.getElementById('birdGrid');
