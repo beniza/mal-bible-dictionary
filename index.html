@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ml" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ബൈബിൾ ഫൗണ ജ്ഞാനകോശം — UBS Malayalam</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;600;700&family=Noto+Serif+Malayalam:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans Malayalam', sans-serif; background-color: #f5f0e8; color: #2c241e; }
+        .serif { font-family: 'Noto Serif Malayalam', serif; }
+        .glass-card { background: rgba(255,255,255,0.45); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.6); }
+        .entry-card { transition: transform 0.18s, box-shadow 0.18s; cursor: default; }
+        .entry-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(44,36,30,0.12); }
+        .section-tab { transition: background 0.18s, color 0.18s; }
+        .section-tab.active { background: #2c241e; color: #f5f0e8; border-color: #2c241e; }
+        .desc-clamp { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    </style>
+</head>
+<body class="min-h-screen">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 bg-[#2c241e]/95 backdrop-blur-sm text-[#f5f0e8] px-6 py-4 flex items-center justify-between">
+        <span class="serif font-bold tracking-wide">ബൈബിൾ ഫൗണ ജ്ഞാനകോശം</span>
+        <a href="biblical_aviary_explorer.html"
+           class="text-sm text-[#c19a6b] hover:text-white transition-colors flex items-center gap-1">
+            പക്ഷി പ്രദർശനി <span class="text-lg">→</span>
+        </a>
+    </nav>
+
+    <!-- Hero -->
+    <section class="max-w-5xl mx-auto px-6 pt-16 pb-10 text-center">
+        <p class="text-[10px] font-bold tracking-[0.25em] text-[#8b735b] uppercase mb-3">UBS Fauna Lexicon · Malayalam Edition</p>
+        <h1 class="serif text-5xl md:text-6xl font-bold leading-tight mb-5">
+            ബൈബിൾ ഫൗണ<br>ജ്ഞാനകോശം
+        </h1>
+        <p class="text-[#8b735b] max-w-lg mx-auto mb-8 leading-relaxed">
+            ബൈബിളിലെ ജന്തുക്കളുടെ ഹെബ്രായ, ഗ്രീക്ക്, മലയാള നാമങ്ങളും
+            ഭാഷാശാസ്ത്ര വ്യാഖ്യാനങ്ങളും — BSI 1910, MCV 2020, POC
+            വിവർത്തനങ്ങൾ ഉൾക്കൊള്ളിച്ച്.
+        </p>
+        <div class="flex justify-center gap-3 flex-wrap text-sm">
+            <span class="glass-card px-4 py-2 rounded-full font-semibold text-[#8b735b]">54 ഇനങ്ങൾ</span>
+            <span class="glass-card px-4 py-2 rounded-full text-stone-500">3 വർഗ്ഗങ്ങൾ</span>
+            <span class="glass-card px-4 py-2 rounded-full text-stone-500">Paratext TBDML</span>
+        </div>
+    </section>
+
+    <!-- Featured: Aviary Explorer -->
+    <section class="max-w-5xl mx-auto px-6 pb-12">
+        <p class="text-[10px] font-bold tracking-[0.2em] text-[#8b735b] uppercase mb-3">പ്രത്യേക ലക്കം</p>
+        <a href="biblical_aviary_explorer.html" class="block group">
+            <div class="bg-[#2c241e] text-[#f5f0e8] rounded-3xl px-8 py-7 flex flex-col sm:flex-row items-center gap-6
+                        hover:bg-[#3d3128] transition-colors">
+                <div class="shrink-0 w-16 h-16 rounded-2xl bg-[#c19a6b]/20 flex items-center justify-center text-4xl">
+                    🦅
+                </div>
+                <div class="flex-1 text-center sm:text-left">
+                    <p class="text-[#c19a6b] text-[10px] font-bold tracking-widest uppercase mb-1">
+                        Interactive Edition
+                    </p>
+                    <h2 class="serif text-2xl font-bold mb-2">ബൈബിൾ പക്ഷി നിഘണ്ടു</h2>
+                    <p class="text-[#f5f0e8]/65 text-sm leading-relaxed">
+                        ലേവ്യർ 11 · ആവർത്തനം 14 — 16 അശുദ്ധ പക്ഷി ഇനങ്ങൾ.
+                        ചിത്രങ്ങൾ, ഹെബ്രു ഉൽഭവം, 8 ബൈബിൾ പരിഭാഷ താരതമ്യം,
+                        BSI / MCV / POC വിവർത്തന കുറിപ്പുകൾ.
+                    </p>
+                </div>
+                <div class="text-[#c19a6b] text-3xl font-light group-hover:translate-x-1 transition-transform shrink-0">
+                    →
+                </div>
+            </div>
+        </a>
+    </section>
+
+    <!-- Entry Browser -->
+    <section class="max-w-5xl mx-auto px-6 pb-24">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+            <h2 class="serif text-2xl font-bold">നിഘണ്ടു ഇനങ്ങൾ</h2>
+            <div class="flex gap-2 flex-wrap">
+                <button onclick="filterSection('all',this)"
+                        class="section-tab active px-4 py-1.5 rounded-full text-sm font-semibold border border-[#2c241e]">
+                    എല്ലാം
+                </button>
+                <button onclick="filterSection('general',this)"
+                        class="section-tab px-4 py-1.5 rounded-full text-sm font-semibold border border-stone-300 text-stone-600">
+                    ജീവജാലം
+                </button>
+                <button onclick="filterSection('mammal',this)"
+                        class="section-tab px-4 py-1.5 rounded-full text-sm font-semibold border border-stone-300 text-stone-600">
+                    സസ്തനി
+                </button>
+                <button onclick="filterSection('bird',this)"
+                        class="section-tab px-4 py-1.5 rounded-full text-sm font-semibold border border-stone-300 text-stone-600">
+                    പക്ഷി
+                </button>
+            </div>
+        </div>
+
+        <div id="entryGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#2c241e] text-[#f5f0e8]/50 text-center text-xs py-10 px-6 space-y-1">
+        <p class="text-[#f5f0e8]/80 font-semibold text-sm mb-2">UBS Fauna Lexicon — Malayalam</p>
+        <p>ഉറവിടം: UBS Fauna Lexicon (English) · Paratext Project TBDML</p>
+        <p>ഈ ജ്ഞാനകോശം BSI 1910, MCV 2020, POC പരിഭാഷകൾ സമന്വയിച്ച് UBS ഉറവിടത്തിൽ നിന്ന് നിർമ്മിച്ചതാണ്.</p>
+        <p class="pt-3">
+            <a href="https://github.com/tfbf/mal-bible-dictionary"
+               class="hover:text-[#c19a6b] transition-colors">github.com/tfbf/mal-bible-dictionary</a>
+        </p>
+    </footer>
+
+    <script>
+    const entries = [
+        // ── Section 1: General animal terms ──────────────────────────────────────
+        { key: "1",     sec: "general", mal: "ജീവജാലങ്ങൾ",                         eng: "Animals, general",             desc: "ബൈബിളിൽ 'മൃഗം' / 'ജീവി' — ഹെബ്രു-ഗ്രീക്ക് പൊതുനാമങ്ങൾ." },
+        { key: "1.1",   sec: "general", mal: "കന്നുകാലി",                           eng: "Cattle / livestock",           desc: "ജീവനുള്ള ധനം — വളർത്തുമൃഗ-സമ്പത്തിന്റെ ഒന്നായ കൂട്ടനാമം." },
+        { key: "1.2",   sec: "general", mal: "ഭാരം ചുമക്കുന്ന മൃഗങ്ങൾ",            eng: "Beasts of burden",             desc: "കയറ്റിവിടൽ / ഭാരവഹനത്തിനോ യാത്രയ്ക്കോ ഉള്ള ഉപകരണ-മൃഗങ്ങൾ." },
+        { key: "1.3",   sec: "general", mal: "വന്യ / അപകടകര മൃഗങ്ങൾ",              eng: "Wild / dangerous animals",     desc: "വെളിപ്പാടിലെ പ്രതീകാത്മകമായ 'മൃഗം' ഉൾപ്പെടെ." },
+
+        // ── Section 2: Mammals ────────────────────────────────────────────────────
+        { key: "2.1",   sec: "mammal",  mal: "ശുദ്ധ മൃഗങ്ങൾ",                       eng: "Clean animals (Deu 14:4–6)",   desc: "ഇസ്രായേൽ നിയമ-പ്രകാരം ഭക്ഷ്യയോഗ്യമായ സസ്തനി-ഗണം." },
+        { key: "2.2",   sec: "mammal",  mal: "ഹരിണം",                               eng: "Antelope",                     desc: "ഹെബ്രു dishon — തർക്കമുള്ള ഒരു ജന്തു; ആൻ്റ്‌ലോപ്പ് ആകാൻ സാധ്യത." },
+        { key: "2.3",   sec: "mammal",  mal: "കുരങ്ങുകൾ",                           eng: "Apes",                         desc: "ശലോമോൻ്റെ വ്യാപാര ചരക്ക്-ഗണത്തിൽ ഒന്ന്." },
+        { key: "2.3.1", sec: "mammal",  mal: "ബാബൂൺ",                               eng: "Baboon",                       desc: "പ്രാചീന മദ്ധ്യേഷ്യയിൽ അറിയപ്പെട്ടിരുന്ന വലിയ കുരങ്ങ്." },
+        { key: "2.3.2", sec: "mammal",  mal: "കുരങ്ങ്",                             eng: "Monkey",                       desc: "പ്രാചീന മദ്ധ്യേഷ്യയിൽ ചിരപരിചിതമായ ചെറിയ കുരങ്ങ്." },
+        { key: "2.4",   sec: "mammal",  mal: "കഴുത",                                eng: "Donkey / Ass",                 desc: "ഭാരവഹന-ഉദ്ദേശ്യം, ദൈവദൂത-ഭരണ-ബിംബം — ബൈബിളിൽ ഇടയ്ക്കിടെ." },
+        { key: "2.5",   sec: "mammal",  mal: "വവ്വാൽ",                              eng: "Bat",                          desc: "സസ്തനിയെ 'ഇരുട്ടിൽ പറക്കുന്ന ജീവി' എന്ന നിലയിൽ പക്ഷിഗണത്തിൽ." },
+        { key: "2.6",   sec: "mammal",  mal: "കരടി",                                eng: "Bear",                         desc: "ഭയങ്കര അപകടത്തിന്റെ പ്രതീകം; ദൈവ-ന്യായ ബിംബം." },
+        { key: "2.7",   sec: "mammal",  mal: "ബൂബൽ ഹാർട്ടബീസ്റ്റ്",                eng: "Bubal hartebeest (roe deer)",  desc: "ഹെബ്രു yachmur — ഇസ്രായേലിൽ ഒരുകാലത്ത് ഉണ്ടായിരുന്ന ആന്റ്‍ലോപ്." },
+        { key: "2.8",   sec: "mammal",  mal: "ഒട്ടകം",                              eng: "Camel, dromedary",             desc: "Arabia dromedary-യും Bactrian camel-ഉം; വ്യാപാര, ഗോത്ര-ജീവിതം." },
+        { key: "2.9",   sec: "mammal",  mal: "പൂച്ച",                               eng: "Cat",                          desc: "ക്രി.മു. 1600-ൽ ഈജിപ്തിൽ ഗൃഹ-ജന്തു; ബൈബിളിൽ അപൂർവ്വ." },
+        { key: "2.10",  sec: "mammal",  mal: "കന്നുകാലി, പശു, മൂരി, കാള",          eng: "Cattle, cow, ox, bull",        desc: "ഭക്ഷണം, കൃഷി, ബലി — ഇസ്രായേൽ ജീവിതത്തിന്റെ കേന്ദ്ര-ജന്തു." },
+        { key: "2.11",  sec: "mammal",  mal: "മാൻ",                                 eng: "Deer",                         desc: "ശൃംഗം ഉള്ള ഗ്രേഷ്ഠ-ജന്തു; ദൈവ-ദാഹത്തിന്റെ ഉപമ." },
+        { key: "2.12",  sec: "mammal",  mal: "നായ",                                 eng: "Dog",                          desc: "ജൂദ സംസ്കാരത്തിൽ നിന്ദ്യ-ജന്തു; NT-ൽ ഭിന്ന ബിംബം." },
+        { key: "2.13",  sec: "mammal",  mal: "ഡുഗോങ്",                              eng: "Dugong",                       desc: "ഹെബ്രു tachash — ആവരണ-നിർമ്മാണത്തിൽ; ജലസസ്തനി." },
+        { key: "2.14",  sec: "mammal",  mal: "ആന",                                  eng: "Elephant",                     desc: "ഭൂ-ജന്തുക്കളിൽ ഏറ്റവും വലുത്; ദന്തവും യുദ്ധ-ഉപകരണവും." },
+        { key: "2.15",  sec: "mammal",  mal: "ഗസൽ",                                 eng: "Gazelle",                      desc: "വേഗം, ലാഘവം, സൌന്ദര്യം — ഇസ്രായേൽ ഉപമകളിൽ ഇടയ്ക്കിടെ." },
+        { key: "2.16",  sec: "mammal",  mal: "കോലാട്",                              eng: "Goat",                         desc: "പാൽ, മാംസം, രോമം, ബലി — ഗ്രാമ-ജീവിതത്തിന്റെ ആധാരം." },
+        { key: "2.17",  sec: "mammal",  mal: "മുയൽ",                                eng: "Hare",                         desc: "'ജഡ-ഭക്ഷണം ഇടക്കിടെ' — കറഡ്-ഭക്ഷ്യ-നിയമ-ചർച്ചയിൽ." },
+        { key: "2.18",  sec: "mammal",  mal: "കുതിര",                               eng: "Horse",                        desc: "യുദ്ധ-ബലത്തിന്റെ ബിംബം; ദൈവ-ദൂതന്മാരുടെ വാഹനം." },
+        { key: "2.19",  sec: "mammal",  mal: "കുറുനരി",                             eng: "Hyena",                        desc: "വിചിത്ര ശബ്ദം, ശൂന്യ-ഭൂ ബന്ധം — ശൂന്യതയുടെ ബിംബം." },
+        { key: "2.20",  sec: "mammal",  mal: "കുഴിമുയൽ",                            eng: "Hyrax / rock badger",          desc: "ആനയോടും കാണ്ടാമൃഗത്തോടും ബന്ധമുള്ള, പാറ-ആവാസ-ജന്തു." },
+        { key: "2.21",  sec: "mammal",  mal: "മലയാട്",                              eng: "Ibex / wild goat",             desc: "പർവ്വതങ്ങളിലും പാറക്കെട്ടുകളിലും; ലക്ഷ്യ-ബോധ ബിംബം." },
+        { key: "2.22",  sec: "mammal",  mal: "കുറുനരി, കുറുക്കൻ",                  eng: "Jackal, fox",                  desc: "ബൈബിൾ ദേശങ്ങളിലെ രണ്ട് സാധാരണ വന്യ-നായ ഇനം." },
+        { key: "2.23",  sec: "mammal",  mal: "പുള്ളിപ്പുലി",                        eng: "Leopard",                      desc: "പുള്ളികളുള്ള വലിയ പൂച്ച; ദ്രുതതയുടെ ബിംബം." },
+        { key: "2.24",  sec: "mammal",  mal: "സിംഹം",                               eng: "Lion",                         desc: "ഏറ്റവും വലിയ പൂച്ചവർഗ്ഗ; ഭൂ-ജന്തുക്കളിൽ രാജൻ." },
+        { key: "2.25",  sec: "mammal",  mal: "തുരപ്പനെലി",                          eng: "Mole rat",                     desc: "അപൂർവ്വ ഹെബ്രു പദം — ഭൂഗർഭ-ജീവി; ഇരുട്ടിന്റെ ബന്ധം." },
+        { key: "2.26",  sec: "mammal",  mal: "കീരി, വീസൽ",                          eng: "Mongoose, weasel",             desc: "വേഗതയേറിയ ചെറിയ ജന്തു — അശുദ്ധ-ഗണം." },
+        { key: "2.27",  sec: "mammal",  mal: "എലി, പെരുച്ചാഴി",                    eng: "Mouse, rat",                   desc: "ഫിലിസ്ത്യ-ബാധ, ഭക്ഷ്യ-നിരോധം, ശൂന്യ-ഭൂ ബിംബം." },
+        { key: "2.28",  sec: "mammal",  mal: "കോവർകഴുത",                            eng: "Mule",                         desc: "കഴുതയും കുതിരയും തമ്മിലുള്ള സങ്കരസന്തതി; രാജ-വാഹനം." },
+        { key: "2.29",  sec: "mammal",  mal: "ഒറിക്സ്",                             eng: "Oryx",                         desc: "നീണ്ട, ഏതാണ്ട് നേരായ കൊമ്പ്; ശുദ്ധ-ഭക്ഷ്യ-ഗണം." },
+        { key: "2.30",  sec: "mammal",  mal: "പന്നി",                                eng: "Pig",                          desc: "ഏറ്റവും അശുദ്ധ-ജന്തു; ജൂദ, ഇസ്ലാം, ഇതര-ഭക്ഷ്യ-ബിംബം." },
+        { key: "2.31",  sec: "mammal",  mal: "ചെമ്മരിയാട്, കുഞ്ഞാട്",              eng: "Sheep, lamb",                  desc: "ഇടയ-ജീവിതം, ബലി, ദൈവ-ജനം-ഉപമ — ബൈബിളിൽ ഏറ്റവും ഇടം." },
+        { key: "2.31.1",sec: "mammal",  mal: "ആട്ടിൻകൂട്ടം",                        eng: "Flock",                        desc: "കന്നുകൂട്ടം / ആട്ടിൻകൂട്ടം — ഒന്നിച്ചുള്ള ഗ്രൂപ്പ്-നാമം." },
+        { key: "2.32",  sec: "mammal",  mal: "കാട്ടുകഴുത",                          eng: "Wild ass",                     desc: "ഇണക്കമില്ലാത്ത കഴുത-ബന്ധു; സ്വതന്ത്ര-ജീവി ബിംബം." },
+        { key: "2.33",  sec: "mammal",  mal: "കാട്ടുപന്നി",                          eng: "Wild boar",                    desc: "വളർത്തുപന്നിയുടെ ഉഗ്ര-കാട്ടുപൂർവ്വികൻ; ദ്രോഹ ബിംബം." },
+        { key: "2.34",  sec: "mammal",  mal: "കാട്ടുപോത്ത്",                         eng: "Wild ox",                      desc: "ഹെബ്രു te'o — ഇപ്പോൾ വംശ-നശിച്ച ഭൂ-ഭീമൻ." },
+        { key: "2.35",  sec: "mammal",  mal: "ചെന്നായ്",                             eng: "Wolf",                         desc: "ആട്ടിൻകൂട്ടങ്ങളെ വേട്ടയാടുന്ന; അലഞ്ഞുതിരിയൽ-ബിംബം." },
+
+        // ── Section 3: Birds ─────────────────────────────────────────────────────
+        { key: "3.1",   sec: "bird",    mal: "പക്ഷി (പൊതുപദം)",                     eng: "Bird, generic",                desc: "ചെറിയ കുരുവി മുതൽ വലിയ കഴുകൻ വരെ — ഹെബ്രു ʿayit / ṣippōr." },
+        { key: "3.2",   sec: "bird",    mal: "പക്ഷികൾ: ശുദ്ധവും അശുദ്ധവും",         eng: "Birds, clean and unclean",     desc: "ലേവ്യർ 11 / ആവർ 14-ൽ ഇരുപത് ഹെബ്രു പദം — തർക്ക-തിരിച്ചറിവ്." },
+        { key: "3.3",   sec: "bird",    mal: "കോഴി, പൂവൻകോഴി, പിടക്കോഴി",          eng: "Chicken, rooster, hen",        desc: "കാട്ടുകോഴിയിൽനിന്ന് ഉരുത്തിരിഞ്ഞ; NT-ൽ ഇടയ്ക്കിടെ." },
+        { key: "3.4",   sec: "bird",    mal: "നീർക്കാക്ക",                           eng: "Cormorant",                    desc: "ഹെബ്രു shalak = 'ചാടിക്കൂടുക' — ഓസ്പ്രേ ആകാൻ ഏറ്റവും ന്യായം." },
+        { key: "3.5",   sec: "bird",    mal: "കൊക്ക്",                               eng: "Crane",                        desc: "ദേശാടന-ക്രമം; ദൈവ-കൃത്യതയുടെ ബിംബം (യിരെ 8:7)." },
+        { key: "3.6",   sec: "bird",    mal: "കാക്ക, മലങ്കാക്ക",                     eng: "Crow, raven",                  desc: "ഹെബ്രു ʿōrēv — നോഹയുടെ കാക്ക, ഏലിയായ്ക്ക് ആഹാരം." },
+        { key: "3.7",   sec: "bird",    mal: "പ്രാവ്, കുറുപ്രാവ്",                   eng: "Dove, pigeon",                 desc: "ബലി, ഉടമ്പടി, പരിശുദ്ധാത്മ-ബിംബം — ബൈബിളിൽ ഏറ്റവും ഇടം." },
+        { key: "3.8",   sec: "bird",    mal: "കഴുകൻ, പരുന്ത്",                       eng: "Eagle, vulture",               desc: "ഹെബ്രു nesher — ഗ്രിഫൺ കഴുകൻ; ദൈവ-സംരക്ഷണ-ബിംബം." },
+        { key: "3.9",   sec: "bird",    mal: "വാത്ത",                                eng: "Goose",                        desc: "ശലോമോൻ-രാജ-ഭക്ഷണ-ഗണം; ഗ്രേലാഗ് / ഈജിപ്ഷ്യൻ വാത്ത." },
+        { key: "3.10",  sec: "bird",    mal: "പരുന്ത്, പ്രാപ്പിടിയൻ",               eng: "Hawk, falcon",                 desc: "ʿayah (ഫാൽക്കൺ-ഗ്രൂപ്പ്), nets (ചെറ്റ-ഹോക്ക്) — ദേശാടനം." },
+        { key: "3.11",  sec: "bird",    mal: "കൊക്ക്",                               eng: "Heron",                        desc: "ʿanafah = 'മൂക്ക്' (ഹെ.) — നീണ്ട-കൊക്കുള്ള ജലപക്ഷി-ഗണം." },
+        { key: "3.12",  sec: "bird",    mal: "ഉപ്പൂപ്പൻ",                            eng: "Hoopoe",                       desc: "dukifat — BSI/MCV/POC: ഏകസ്വരത്തിൽ 'ഉപ്പൂപ്പ'; ശബ്ദ-ആനുകരണ-നാമം." },
+        { key: "3.13",  sec: "bird",    mal: "ജാക്‌ഡോ, മരുഭൂ-പക്ഷി",               eng: "Jackdaw",                      desc: "qaʾath — BSI 'വേഴാമ്പൽ'; MCV/POC 'മൂങ്ങ'; ശൂന്യ-ഭൂ ബന്ധം." }
+    ];
+
+    function renderEntries(data) {
+        const grid = document.getElementById('entryGrid');
+        grid.innerHTML = '';
+
+        if (data.length === 0) {
+            grid.innerHTML = '<p class="col-span-full text-center text-stone-400 py-12">ഇനങ്ങൾ ഒന്നും കണ്ടെത്തിയില്ല.</p>';
+            return;
+        }
+
+        // Group by section for section headers
+        const sectionMeta = {
+            general: { label: "ജീവജാലം — പൊതുഖണ്ഡം", eng: "General" },
+            mammal:  { label: "സസ്തനികൾ",              eng: "Mammals" },
+            bird:    { label: "പക്ഷികൾ",                eng: "Birds"   }
+        };
+
+        // Track which sections we've shown a header for
+        const shownSections = new Set();
+        const needHeaders = new Set(data.map(e => e.sec)).size > 1;
+
+        data.forEach(entry => {
+            // Section header divider
+            if (needHeaders && !shownSections.has(entry.sec)) {
+                shownSections.add(entry.sec);
+                const meta = sectionMeta[entry.sec];
+                const divider = document.createElement('div');
+                divider.className = 'col-span-full flex items-center gap-4 mt-4 mb-2';
+                divider.innerHTML = `
+                    <span class="serif text-lg font-bold text-[#2c241e]">${meta.label}</span>
+                    <span class="flex-1 h-px bg-[#c19a6b]/30"></span>
+                    <span class="text-xs text-stone-400">${meta.eng}</span>
+                `;
+                grid.appendChild(divider);
+            }
+
+            const card = document.createElement('div');
+            card.className = 'entry-card glass-card rounded-2xl p-5 flex flex-col gap-3';
+
+            const secColor = { general: '#8b735b', mammal: '#8b735b', bird: '#5b7a8b' }[entry.sec];
+            const birdBadge = entry.sec === 'bird'
+                ? `<span class="text-[9px] font-bold px-1.5 py-0.5 rounded bg-[#5b7a8b]/10 text-[#3a5a6b]">BIRDS §${entry.key}</span>`
+                : '';
+
+            card.innerHTML = `
+                <div class="flex items-start justify-between gap-2">
+                    <span class="text-[10px] font-bold px-2 py-0.5 rounded"
+                          style="background:${secColor}18;color:${secColor}">UBS ${entry.key}</span>
+                    ${birdBadge}
+                </div>
+                <div>
+                    <h3 class="serif text-xl font-bold leading-snug">${entry.mal}</h3>
+                    <p class="text-xs text-stone-400 mt-0.5">${entry.eng}</p>
+                </div>
+                <p class="text-xs text-stone-500 leading-relaxed desc-clamp">${entry.desc}</p>
+            `;
+
+            grid.appendChild(card);
+        });
+    }
+
+    function filterSection(sec, btn) {
+        // Update active tab
+        document.querySelectorAll('.section-tab').forEach(t => t.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filtered = sec === 'all' ? entries : entries.filter(e => e.sec === sec);
+        renderEntries(filtered);
+    }
+
+    // Initial render
+    renderEntries(entries);
+    </script>
+</body>
+</html>
