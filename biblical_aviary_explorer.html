@@ -375,23 +375,25 @@
     </footer>
 
     <script>
+        const IMG_CDN = "https://raw.githubusercontent.com/tfbf/scripture-resource-studio-app/main/images/";
+
         const birdData = [
-            { id: "H5404", heb: "നെഷെർ (Nesher)", eng: "Eagle / Vulture", ident: "യൂറേഷ്യൻ ഗ്രിഫൺ കഴുകൻ (Griffon Vulture)", mal: "കഴുകൻ / കടൽറാഞ്ചൻ", cat: "ശവംതീനികൾ", note: "വേരുവാക്കിൻ്റെ അർത്ഥം 'കീറിക്കളയുക' എന്നാണ്. തലമുടിയില്ലാത്ത ശവംതീനിയായ കഴുകനെയാണ് ഇത് സൂചിപ്പിക്കുന്നത് (മീഖാ 1:16)." },
-            { id: "H6538", heb: "പെരെസ് (Peres)", eng: "Ossifrage / Buzzard", ident: "ബിയർഡഡ് കഴുകൻ (Bearded Vulture)", mal: "ചെമ്പരുന്ത് / ഗൃദ്ധ്രം", cat: "ശവംതീനികൾ", note: "അർത്ഥം 'എല്ലൊടിക്കുന്നവൻ'. ഇവ മുകളിൽ നിന്നും എല്ലുകൾ പാറയിലിട്ട് പൊട്ടിച്ച് അതിലെ മജ്ജ ഭക്ഷിക്കുന്നു." },
-            { id: "H5822", heb: "ഒസ്നിയ (Ozniyah)", eng: "Osprey / Black Vulture", ident: "ലാപ്പറ്റ്-ഫേസ്ഡ് കഴുകൻ", mal: "കരിമ്പരുന്ത്", cat: "ശവംതീനികൾ", note: "മിഡിൽ ഈസ്റ്റിൽ കാണപ്പെടുന്ന ഏറ്റവും വലുതും കരുത്തുറ്റതുമായ ശവംതീനി പക്ഷി." },
-            { id: "H1676", heb: "ദാഹ് (Da'ah)", eng: "Kite", ident: "ചെമ്പരുന്ത് വർഗ്ഗങ്ങൾ (Black/Red Kite)", mal: "ചെങ്ങാലിപ്പരുന്ത് / അതതുവിധം പരുന്തു", cat: "ശവംതീനികൾ", note: "അർത്ഥം 'വേഗത്തിൽ പറക്കുന്നവ'. വേഗത്തിൽ പറന്ന് ഇരപിടിക്കുന്ന പരുന്തുകൾ." },
-            { id: "H3284", heb: "ബത്ത് യനാഹ് (Bat Ya'anah)", eng: "Ostrich", ident: "വലിയ മൂങ്ങ (Eagle Owl)", mal: "ഒട്ടകപ്പക്ഷി", cat: "രാത്രിഞ്ചരന്മാർ", note: "പാഴായിക്കിടക്കുന്ന പ്രദേശങ്ങളിലെ വലിയ രാത്രിപ്പക്ഷിയെയാണ് ഇത് സൂചിപ്പിക്കുന്നത്. ഒട്ടകപ്പക്ഷി സസ്യഭുക്കായതിനാൽ അശുദ്ധമാകാൻ സാധ്യതയില്ല." },
-            { id: "H8464", heb: "തഹ്മാസ് (Tachmas)", eng: "Night hawk", ident: "രാത്രിയിലെ വേട്ടക്കാർ (Short-eared Owl / Nightjar)", mal: "പുള്ള് / രാനത്ത്", cat: "രാത്രിഞ്ചരന്മാർ", note: "രാത്രികാലങ്ങളിൽ ഇരതേടുന്ന, പ്രത്യേക ശബ്ദമുണ്ടാക്കുന്ന പക്ഷികൾ." },
-            { id: "H3563", heb: "കോസ് (Kos)", eng: "Little Owl", ident: "ചെറിയ മൂങ്ങ (Little Owl)", mal: "നത്ത്", cat: "രാത്രിഞ്ചരന്മാർ", note: "'കോപ്പ' എന്നാണ് ഈ വാക്കിന്റെ അർത്ഥം. മൂങ്ങയുടെ കണ്ണുകളുടെ കുഴികളെയാകാം ഇത് സൂചിപ്പിക്കുന്നത്." },
-            { id: "H8580", heb: "തിൻഷെമെത് (Tinshemeth)", eng: "Swan", ident: "വെള്ളമൂങ്ങ (Barn Owl)", mal: "അരയന്നം / മൂങ്ങ", cat: "രാത്രിഞ്ചരന്മാർ", note: "അരയന്നം ഇസ്രായേലിൽ സാധാരണമല്ല. ഈ വാക്കിനർത്ഥം 'ചീറ്റുക' എന്നാണ്; ഇത് വെള്ളമൂങ്ങയുടെ ശബ്ദത്തിന് സമാനമാണ്." },
-            { id: "H7828", heb: "ഷഹഫ് (Shachaph)", eng: "Sea gull", ident: "കടൽക്കാക്കകൾ (Gulls and Terns)", mal: "കടൽക്കാക്ക / കടൽപ്പാത്ത", cat: "നീർപ്പക്ഷികൾ", note: "തീരപ്രദേശങ്ങളിൽ കാണപ്പെടുന്ന ശവംതീനി പക്ഷികൾ." },
-            { id: "H7994", heb: "ഷാലക്ക് (Shalak)", eng: "Cormorant", ident: "നീർക്കാക്ക (Cormorant / Osprey)", mal: "നീർക്കാക്ക", cat: "നീർപ്പക്ഷികൾ", note: "'മുങ്ങുക' എന്നാണ് ഈ വാക്കിൻ്റെ അർത്ഥം. മീൻ പിടിക്കാൻ വെള്ളത്തിൽ മുങ്ങുന്ന പക്ഷികളാണിവ." },
-            { id: "H6893", heb: "ക്വാഅത് (Qa'at)", eng: "Pelican", ident: "മരുഭൂമിയിലെ മൂങ്ങ (Desert Owl)", mal: "വേഴാമ്പൽ", cat: "നീർപ്പക്ഷികൾ", note: "പെലിക്കനുകൾക്ക് ജീവിക്കാൻ വെള്ളം ആവശ്യമാണ്. എന്നാൽ ഈ പക്ഷി വെള്ളമില്ലാത്ത ശൂന്യപ്രദേശങ്ങളിലാണ് കാണപ്പെടുന്നത് എന്ന് ബൈബിൾ പറയുന്നു." },
-            { id: "H2624", heb: "ഹസീദഹ് (Chasidah)", eng: "Stork", ident: "കൊക്ക് വർഗ്ഗം (Stork)", mal: "പെരുഞാറ / ഞാറപ്പക്ഷി", cat: "നീർപ്പക്ഷികൾ", note: "അർത്ഥം 'വിശ്വസ്തത'. തങ്ങളുടെ കുഞ്ഞുങ്ങളോടുള്ള ഈ പക്ഷികളുടെ സ്നേഹത്തെ ഇത് സൂചിപ്പിക്കുന്നു." },
-            { id: "H601", heb: "അനഫഹ് (Anafah)", eng: "Heron", ident: "ചതുപ്പിലെ കൊക്ക് (Heron)", mal: "കൊക്ക് / എരണ്ട", cat: "നീർപ്പക്ഷികൾ", note: "ദേഷ്യത്തോടെ ചീറ്റുക എന്നതാണ് ഈ വാക്കിൻ്റെ വേരർത്ഥം." },
-            { id: "H6158", heb: "ഓരെവ് (Orev)", eng: "Raven", ident: "കാക്ക വർഗ്ഗങ്ങൾ (Crow / Raven)", mal: "കാക്ക", cat: "മറ്റു പറവകൾ", note: "ഇരുട്ട് അല്ലെങ്കിൽ വൈകുന്നേരം എന്നർത്ഥം വരുന്ന പദത്തിൽ നിന്നാണ് ഈ പേരുണ്ടായത്." },
-            { id: "H1744", heb: "ഡുക്കിഫത് (Dukiphat)", eng: "Lapwing / Hoopoe", ident: "ഉപ്പൂപ്പ (Hoopoe)", mal: "കുളക്കോഴി / കാട്ടുകോഴി / കുടുമ്മച്ചാത്തൻ", cat: "മറ്റു പറവകൾ", note: "ചാണകത്തിലും മാലിന്യത്തിലും കീടങ്ങളെ തിരയുന്ന പക്ഷി. അതിനാൽ ഇവയെ അശുദ്ധമായി കണക്കാക്കുന്നു." },
-            { id: "H5847", heb: "അതല്ലെഫ് (Atalleph)", eng: "Bat", ident: "വവ്വാൽ (Bat)", mal: "വവ്വാൽ / നരിച്ചീർ", cat: "മറ്റു പറവകൾ", note: "ഇരുട്ടിൽ പറക്കുന്നവ എന്ന ഗണത്തിലാണ് ഇതിനെ പക്ഷികളോടൊപ്പം ഉൾപ്പെടുത്തിയിരിക്കുന്നത്." }
+            { id: "H5404", ubes_key: "3.8",    img: "WEB-0280_vulture.jpg",           heb: "നെഷെർ (Nesher)",           eng: "Eagle / Vulture",          ident: "യൂറേഷ്യൻ ഗ്രിഫൺ കഴുകൻ (Griffon Vulture)",        mal: "കഴുകൻ / കടൽറാഞ്ചൻ",                  cat: "ശവംതീനികൾ",     note: "വേരുവാക്കിൻ്റെ അർത്ഥം 'കീറിക്കളയുക' എന്നാണ്. തലമുടിയില്ലാത്ത ശവംതീനിയായ കഴുകനെയാണ് ഇത് സൂചിപ്പിക്കുന്നത് (മീഖാ 1:16)." },
+            { id: "H6538", ubes_key: "3.8",    img: "WEB-0065_beardedvulture.jpg",    heb: "പെരെസ് (Peres)",           eng: "Ossifrage / Buzzard",       ident: "ബിയർഡഡ് കഴുകൻ (Bearded Vulture)",                  mal: "ചെമ്പരുന്ത് / ഗൃദ്ധ്രം",              cat: "ശവംതീനികൾ",     note: "അർത്ഥം 'എല്ലൊടിക്കുന്നവൻ'. ഇവ മുകളിൽ നിന്നും എല്ലുകൾ പാറയിലിട്ട് പൊട്ടിച്ച് അതിലെ മജ്ജ ഭക്ഷിക്കുന്നു." },
+            { id: "H5822", ubes_key: "3.8",    img: "WEB-0577_lappet-faced_vulture.jpg", heb: "ഒസ്നിയ (Ozniyah)",       eng: "Osprey / Black Vulture",   ident: "ലാപ്പറ്റ്-ഫേസ്ഡ് കഴുകൻ (Lappet-faced Vulture)",    mal: "കരിമ്പരുന്ത്",                         cat: "ശവംതീനികൾ",     note: "മിഡിൽ ഈസ്റ്റിൽ കാണപ്പെടുന്ന ഏറ്റവും വലുതും കരുത്തുറ്റതുമായ ശവംതീനി പക്ഷി." },
+            { id: "H1676", ubes_key: "3.14",   img: "WEB-0567_black_kite.jpg",        heb: "ദാഹ് (Da'ah)",             eng: "Kite",                      ident: "ചെമ്പരുന്ത് വർഗ്ഗങ്ങൾ (Black/Red Kite)",             mal: "ചെങ്ങാലിപ്പരുന്ത് / അതതുവിധം പരുന്തു", cat: "ശവംതീനികൾ",     note: "അർത്ഥം 'വേഗത്തിൽ പറക്കുന്നവ'. വേഗത്തിൽ പറന്ന് ഇരപിടിക്കുന്ന പരുന്തുകൾ." },
+            { id: "H3284", ubes_key: "3.17.1", img: "WEB-0193_eagle_owl.jpg",         heb: "ബത്ത് യനാഹ് (Bat Ya'anah)", eng: "Ostrich",                  ident: "വലിയ മൂങ്ങ (Eagle Owl)",                              mal: "ഒട്ടകപ്പക്ഷി",                         cat: "രാത്രിഞ്ചരന്മാർ", note: "പാഴായിക്കിടക്കുന്ന പ്രദേശങ്ങളിലെ വലിയ രാത്രിപ്പക്ഷിയെയാണ് ഇത് സൂചിപ്പിക്കുന്നത്. ഒട്ടകപ്പക്ഷി സസ്യഭുക്കായതിനാൽ അശുദ്ധമാകാൻ സാധ്യതയില്ല." },
+            { id: "H8464", ubes_key: "3.17.7", img: "WEB-0807_short-eared_owl.jpg",   heb: "തഹ്മാസ് (Tachmas)",        eng: "Night hawk",                ident: "രാത്രിയിലെ വേട്ടക്കാർ (Short-eared Owl / Nightjar)", mal: "പുള്ള് / രാനത്ത്",                     cat: "രാത്രിഞ്ചരന്മാർ", note: "രാത്രികാലങ്ങളിൽ ഇരതേടുന്ന, പ്രത്യേക ശബ്ദമുണ്ടാക്കുന്ന പക്ഷികൾ." },
+            { id: "H3563", ubes_key: "3.17.3", img: "WEB-0601_little_owl.jpg",        heb: "കോസ് (Kos)",               eng: "Little Owl",                ident: "ചെറിയ മൂങ്ങ (Little Owl)",                            mal: "നത്ത്",                                 cat: "രാത്രിഞ്ചരന്മാർ", note: "'കോപ്പ' എന്നാണ് ഈ വാക്കിന്റെ അർത്ഥം. മൂങ്ങയുടെ കണ്ണുകളുടെ കുഴികളെയാകാം ഇത് സൂചിപ്പിക്കുന്നത്." },
+            { id: "H8580", ubes_key: "3.17.8", img: "WEB-0058_barnowl.jpg",           heb: "തിൻഷെമെത് (Tinshemeth)",  eng: "Swan",                      ident: "വെള്ളമൂങ്ങ (Barn Owl)",                               mal: "അരയന്നം / മൂങ്ങ",                     cat: "രാത്രിഞ്ചരന്മാർ", note: "അരയന്നം ഇസ്രായേലിൽ സാധാരണമല്ല. ഈ വാക്കിനർത്ഥം 'ചീറ്റുക' എന്നാണ്; ഇത് വെള്ളമൂങ്ങയുടെ ശബ്ദത്തിന് സമാനമാണ്." },
+            { id: "H7828", ubes_key: "3.20",   img: "WEB-0794_seagull.jpg",           heb: "ഷഹഫ് (Shachaph)",         eng: "Sea gull",                  ident: "കടൽക്കാക്കകൾ (Gulls and Terns)",                      mal: "കടൽക്കാക്ക / കടൽപ്പാത്ത",            cat: "നീർപ്പക്ഷികൾ",  note: "തീരപ്രദേശങ്ങളിൽ കാണപ്പെടുന്ന ശവംതീനി പക്ഷികൾ." },
+            { id: "H7994", ubes_key: "3.4",    img: "WEB-0690_osprey.jpg",            heb: "ഷാലക്ക് (Shalak)",        eng: "Cormorant",                 ident: "നീർക്കാക്ക (Cormorant / Osprey)",                      mal: "നീർക്കാക്ക",                           cat: "നീർപ്പക്ഷികൾ",  note: "'മുങ്ങുക' എന്നാണ് ഈ വാക്കിൻ്റെ അർത്ഥം. മീൻ പിടിക്കാൻ വെള്ളത്തിൽ മുങ്ങുന്ന പക്ഷികളാണിവ." },
+            { id: "H6893", ubes_key: "3.13",   img: "WEB-0542_jackdaw.jpg",           heb: "ക്വാഅത് (Qa'at)",         eng: "Pelican",                   ident: "മരുഭൂമിയിലെ മൂങ്ങ / ജാക്ഡോ (Desert Owl / Jackdaw)", mal: "വേഴാമ്പൽ / മൂങ്ങ",                  cat: "നീർപ്പക്ഷികൾ",  note: "പെലിക്കനുകൾക്ക് ജീവിക്കാൻ വെള്ളം ആവശ്യമാണ്. എന്നാൽ ഈ പക്ഷി വെള്ളമില്ലാത്ത ശൂന്യപ്രദേശങ്ങളിലാണ് കാണപ്പെടുന്നത് എന്ന് ബൈബിൾ പറയുന്നു." },
+            { id: "H2624", ubes_key: "3.22",   img: "WEB-0911_white_storks.jpg",      heb: "ഹസീദഹ് (Chasidah)",      eng: "Stork",                     ident: "കൊക്ക് വർഗ്ഗം (Stork)",                               mal: "പെരുഞാറ / ഞാറപ്പക്ഷി",              cat: "നീർപ്പക്ഷികൾ",  note: "അർത്ഥം 'വിശ്വസ്തത'. തങ്ങളുടെ കുഞ്ഞുങ്ങളോടുള്ള ഈ പക്ഷികളുടെ സ്നേഹത്തെ ഇത് സൂചിപ്പിക്കുന്നു." },
+            { id: "H601",  ubes_key: "3.11",   img: "WEB-0277_grey_heron.jpg",        heb: "അനഫഹ് (Anafah)",          eng: "Heron",                     ident: "ചതുപ്പിലെ കൊക്ക് (Heron)",                            mal: "കൊക്ക് / എരണ്ട",                     cat: "നീർപ്പക്ഷികൾ",  note: "ദേഷ്യത്തോടെ ചീറ്റുക എന്നതാണ് ഈ വാക്കിൻ്റെ വേരർത്ഥം." },
+            { id: "H6158", ubes_key: "3.6",    img: "WEB-0165_crow.jpg",              heb: "ഓരെവ് (Orev)",            eng: "Raven",                     ident: "കാക്ക വർഗ്ഗങ്ങൾ (Crow / Raven)",                      mal: "കാക്ക / മലങ്കാക്ക",                   cat: "മറ്റു പറവകൾ",   note: "ഇരുട്ട് അല്ലെങ്കിൽ വൈകുന്നേരം എന്നർത്ഥം വരുന്ന പദത്തിൽ നിന്നാണ് ഈ പേരുണ്ടായത്." },
+            { id: "H1744", ubes_key: "3.12",   img: "WEB-0300_hoopoe.jpg",            heb: "ഡുക്കിഫത് (Dukiphat)",    eng: "Lapwing / Hoopoe",          ident: "ഉപ്പൂപ്പ (Hoopoe)",                                    mal: "ഉപ്പൂപ്പ",                             cat: "മറ്റു പറവകൾ",   note: "ചാണകത്തിലും മാലിന്യത്തിലും കീടങ്ങളെ തിരയുന്ന പക്ഷി. അതിനാൽ ഇവയെ അശുദ്ധമായി കണക്കാക്കുന്നു." },
+            { id: "H5847", ubes_key: "2.5",    img: "WEB-0061_bats.jpg",              heb: "അതല്ലെഫ് (Atalleph)",     eng: "Bat",                       ident: "വവ്വാൽ (Bat)",                                         mal: "വവ്വാൽ / നരിച്ചീർ",                  cat: "മറ്റു പറവകൾ",   note: "ഇരുട്ടിൽ പറക്കുന്നവ എന്ന ഗണത്തിലാണ് ഇതിനെ പക്ഷികളോടൊപ്പം ഉൾപ്പെടുത്തിയിരിക്കുന്നത്." }
         ];
 
         function switchVerseTab(button, book) {
@@ -420,14 +422,25 @@
             data.forEach(bird => {
                 const card = document.createElement('div');
                 card.className = 'bird-card glass-card p-6 rounded-2xl flex flex-col h-full';
+                const imgHtml = bird.img
+                    ? `<div class="mb-4 -mx-6 -mt-6 overflow-hidden rounded-t-2xl">
+                         <img src="${IMG_CDN}${bird.img}" alt="${bird.eng}" loading="lazy"
+                              class="w-full h-40 object-cover"
+                              onerror="this.parentElement.style.display='none'">
+                       </div>`
+                    : '';
                 card.innerHTML = `
+                    ${imgHtml}
                     <div class="flex justify-between items-start mb-4">
                         <span class="text-xs font-bold px-2 py-1 bg-[#8b735b]/10 text-[#8b735b] rounded">${bird.id}</span>
-                        <span class="text-[11px] font-semibold text-stone-500 bg-stone-100 px-2 py-1 rounded-full">${bird.cat}</span>
+                        <div class="flex gap-1 flex-wrap justify-end">
+                            <span class="text-[10px] font-mono text-stone-400 bg-stone-100 px-2 py-1 rounded">UBS ${bird.ubes_key}</span>
+                            <span class="text-[11px] font-semibold text-stone-500 bg-stone-100 px-2 py-1 rounded-full">${bird.cat}</span>
+                        </div>
                     </div>
                     <h4 class="serif text-2xl font-bold mb-1">${bird.heb}</h4>
                     <p class="text-[11px] text-stone-400 mb-4 font-mono">Traditional Eng: ${bird.eng}</p>
-                    
+
                     <div class="mt-auto space-y-3">
                         <div class="p-3 bg-white/50 rounded-lg border border-stone-100">
                             <span class="text-[10px] font-bold text-stone-400 block mb-1">ശാസ്‌ത്രീയ കണ്ടെത്തൽ</span>
