@@ -21,6 +21,9 @@
 ```
 biblical_aviary_explorer.html   # Single-file SPA (55KB)
 verse-tabs.test.mjs              # Node test file (validates verse structure)
+image/  → (symlink to ../tfbf/ffr/images)
+orig/   → (symlink to ../tfbf/ffr/entries/fauna) [UBS English entries]
+mal/    → (symlink to ../My Paratext 9 Projects/TBDML) [UBS Malayalam entries]
 ```
 
 ### HTML Structure Conventions
@@ -30,6 +33,34 @@ verse-tabs.test.mjs              # Node test file (validates verse structure)
 - **Glass-card pattern**: `.glass-card` class for semi-transparent panels with backdrop blur
 - **Malayalam text**: Uses `class="serif"` for serif font (Noto Serif Malayalam), `lang="ml"` where applicable
 - **Interactive elements**: Tabs use `data-verse-tab` / `data-verse-panel` attributes for switching between Leviticus (LEV) and Deuteronomy (DEU) passages
+
+---
+
+## Data Sources
+
+### UBS Fauna Lexicon
+
+**Two complementary sources** (both SFM format, identical `\key` structure):
+
+1. **`orig/`** (English source)
+   - Location: `/Documents/Projects/tfbf/ffr/entries/fauna/`
+   - Files: `01.sfm`, `02.sfm`, `02-01.sfm`, etc.
+   - Contains: Hebrew words, transliterations, Greek equivalents, scholarly discussion, scripture references
+   - Use for: Strong's numbers, etymologies, scientific identifications
+
+2. **`mal/`** (Malayalam source)
+   - Location: `/My Paratext 9 Projects/TBDML/` (Paratext 9 project)
+   - Main file: `94XXATBDML.SFM`
+   - Contains: Malayalam translations, auto-generated metadata (`\rem gen:date`, `\rem gen:model`, `\rem gen:status`)
+   - Use for: Malayalam translations, commentary, validation against English source
+
+**Key mapping**: Both use identical keys (`01`, `02-01`, `02-09`, etc.), so parsing logic works on either source.
+
+### Bird Images
+
+- Location: `image/` → `/Documents/Projects/tfbf/ffr/images/`
+- CDN fallback: `https://raw.githubusercontent.com/tfbf/scripture-resource-studio-app/main/images/`
+- Naming pattern: `OAI-NNNN_description_lang.jpg` (e.g., `OAI-0209_hoopoe_en.jpg`)
 
 ---
 
@@ -111,6 +142,29 @@ initChart()                  // Initializes Chart.js doughnut chart
    ```
 2. **Update chart data** in `initChart()` if category counts change
 3. Chart shows only the 4 main categories; if adding a bird to existing category, no chart changes needed
+
+### ✅ Integrate Bird Data from UBS Fauna Lexicon
+
+1. **Locate the bird** in `orig/` (English) or `mal/` (Malayalam)
+2. **Note the UBS key** (e.g., `02-09` for hoopoe)
+3. **Parse the SFM file** to extract:
+   - Hebrew word, transliteration from `\heb`, `\trl` (in `orig/`)
+   - Scientific ID from `\cont` discussion
+   - Malayalam translations from `mal/`
+4. **Add UBS reference** to bird data:
+   ```javascript
+   {
+     id: "H1744",
+     heb: "ഡുക്കിഫത് (Dukiphat)",
+     eng: "Hoopoe",
+     ident: "Upupa epops",
+     mal: "കുളക്കോഴി / കുടുമ്മച്ചാത്തൻ",
+     cat: "മറ്റു പറവകൾ",
+     ubes_key: "02-09",
+     image_url: "https://raw.githubusercontent.com/tfbf/scripture-resource-studio-app/main/images/OAI-0209_hoopoe_en.jpg",
+     note: "..."
+   }
+   ```
 
 ### ✅ Modify Styling
 

@@ -16,7 +16,7 @@
 
 ## Data Sources
 
-### 1. UBS Fauna Lexicon (`orig/` folder)
+### 1. UBS Fauna Lexicon English (`orig/` folder)
 
 **Location**: `orig/` → symlinked to `/Documents/Projects/tfbf/ffr/entries/fauna/`
 
@@ -39,7 +39,23 @@
 - `02` = Subcategory (e.g., "Unclean birds")
 - `02-01`, `02-02`, etc. = Specific bird entries
 
-### 2. Bird Images (`image/` folder)
+### 2. UBS Fauna Lexicon Malayalam (`mal/` folder)
+
+**Location**: `mal/` → symlinked to `/My Paratext 9 Projects/TBDML/`
+
+**Format**: Paratext 9 project with SFM markup
+- Main file: `94XXATBDML.SFM`
+- Same key structure as `orig/` but with Malayalam translations and commentary
+- Contains:
+  - `\key` — matches `orig/` keys
+  - Malayalam headings (`\s1`, `\s2`, `\s3`)
+  - Malayalam `\cont` translations of English content
+  - Metadata: `\rem gen:date`, `\rem gen:model` (auto-generated date & model)
+  - Status markers: `\rem gen:status converted` and `\rem gen:stage ml`
+
+**Usage**: Source-of-truth for Malayalam bird names and scholarly translations; auto-sync with app data when needed.
+
+### 3. Bird Images (`image/` folder)
 
 **Location**: `image/` → symlinked to `/Documents/Projects/tfbf/ffr/images/`
 
@@ -101,8 +117,9 @@ biblical_aviary_explorer.html     # Main SPA (55KB)
 verse-tabs.test.mjs                # Structure validation tests
 AGENTS.md                          # AI agent instructions
 CLAUDE.md                          # This file
-image/ → (symlink to ../tfbf/ffr/images)
-orig/ → (symlink to ../tfbf/ffr/entries/fauna)
+image/  → (symlink to ../tfbf/ffr/images)
+orig/   → (symlink to ../tfbf/ffr/entries/fauna) [UBS English]
+mal/    → (symlink to ../My Paratext 9 Projects/TBDML) [UBS Malayalam]
 ```
 
 ---
@@ -146,12 +163,18 @@ Then update HTML:
 To auto-populate bird data from SFM files:
 
 ```javascript
-// Pseudo-code: Node.js script to extract bird info
+// Pseudo-code: Node.js script to extract bird info from either orig/ or mal/
 import fs from 'fs';
-const sfmContent = fs.readFileSync('orig/02-09.sfm', 'utf-8');
+const sfmContent = fs.readFileSync('orig/02-09.sfm', 'utf-8'); // or mal/ for Malayalam
 const lines = sfmContent.split('\n');
 // Parse lines starting with `\` to extract key, title, heb, trl, etc.
 ```
+
+**Two sources available:**
+- **English source** (`orig/`): Use for Strong's numbers, Hebrew transliterations, scientific IDs
+- **Malayalam source** (`mal/`): Use for Malayalam translations and commentaries (auto-generated from English via Claude)
+
+Both use identical `\key` structures, so parsing logic is reusable.
 
 ---
 
@@ -159,8 +182,9 @@ const lines = sfmContent.split('\n');
 
 - **Tailwind CDN**: Requires internet; consider pre-generating CSS for offline use
 - **GitHub image CDN**: Fallback if local symlink breaks; ensure image URLs match naming convention
-- **SFM parsing**: Currently manual; no automated sync between UBS entries and bird data
+- **SFM parsing**: Currently manual; no automated sync between UBS entries (both `orig/` and `mal/`) and bird data
 - **Malayalam support**: Font loading from Google works reliably; test offline rendering
+- **Paratext project**: `mal/` is a live Paratext 9 project; always re-export or snapshot before major changes
 
 ---
 
